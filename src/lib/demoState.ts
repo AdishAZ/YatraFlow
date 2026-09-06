@@ -71,6 +71,7 @@ export interface DemoSnapshot {
 // ============================================================
 
 const SEED_INCIDENTS: DemoIncident[] = [
+  // ── SOMNATH ──────────────────────────────────────────────────
   {
     id: 'INC-001', title: 'Crowd Surge at Entry Gateway', templeId: 'somnath',
     location: 'Main Entry Gateway', zone: 'Entry Gateway',
@@ -82,11 +83,65 @@ const SEED_INCIDENTS: DemoIncident[] = [
       { time: '03:17 PM', message: 'Crowd density exceeded threshold (92%)' },
       { time: '03:19 PM', message: 'Alert acknowledged by Control Room' },
       { time: '03:22 PM', message: 'POL-04 and POL-07 dispatched' },
-      { time: '03:25 PM', message: 'MED-02 on standby near zone' },
+      { time: '03:25 PM', message: 'MED-02 on standby near zone — response in progress' },
     ]
   },
   {
-    id: 'INC-002', title: 'Medical Emergency — Elderly Dehydration', templeId: 'dwarka',
+    id: 'INC-002', title: 'Lost Child — Visitors Plaza', templeId: 'somnath',
+    location: 'Visitors Plaza Center', zone: 'Visitors Plaza',
+    type: 'Lost Child', severity: 'High', status: 'Assigned',
+    detectedAt: '03:05 PM',
+    assignedResources: ['VOL-03', 'POL-09'],
+    recommendation: 'Broadcast PA announcement and check CCTV backtrack',
+    timeline: [
+      { time: '03:05 PM', message: 'Parent reported 7-year-old missing' },
+      { time: '03:07 PM', message: 'Incident acknowledged by Control Room' },
+      { time: '03:08 PM', message: 'VOL-03 and POL-09 assigned as response team' },
+    ]
+  },
+  {
+    id: 'INC-003', title: 'Suspicious Bag Near Shoe Stand', templeId: 'somnath',
+    location: 'Shoe Collection Center', zone: 'Entry Gateway',
+    type: 'Security', severity: 'Medium', status: 'Reported',
+    detectedAt: '03:45 PM',
+    assignedResources: [],
+    recommendation: 'Dispatch BDDS unit for inspection and cordon area',
+    timeline: [
+      { time: '03:45 PM', message: 'Bag reported abandoned by volunteer — awaiting assignment' },
+    ]
+  },
+  {
+    id: 'INC-004', title: 'Unauthorized Drone Sighting', templeId: 'somnath',
+    location: 'Beachfront Park', zone: 'Beach Promenade',
+    type: 'Security', severity: 'Medium', status: 'Resolved',
+    detectedAt: '02:30 PM',
+    assignedResources: ['POL-01', 'POL-02'],
+    recommendation: 'Drone grounded and operator identified',
+    timeline: [
+      { time: '02:30 PM', message: 'Unidentified drone detected near Beachfront Park' },
+      { time: '02:32 PM', message: 'Alert acknowledged — patrols assigned' },
+      { time: '02:38 PM', message: 'Patrol units intercepted drone operator' },
+      { time: '02:50 PM', message: 'Drone confiscated, operator escorted — incident resolved' },
+    ]
+  },
+
+  // ── DWARKA ───────────────────────────────────────────────────
+  {
+    id: 'INC-005', title: 'Pilgrim Bottleneck at Moksha Dwar', templeId: 'dwarka',
+    location: 'Moksha Dwar Entry', zone: 'Moksha Dwar',
+    type: 'Crowd Surge', severity: 'High', status: 'In Progress',
+    detectedAt: '03:10 PM',
+    assignedResources: ['POL-08', 'VOL-01'],
+    recommendation: 'Stagger entry batches every 5 minutes; deploy crowd control ropes',
+    timeline: [
+      { time: '03:10 PM', message: 'Bottleneck reported by gate marshal' },
+      { time: '03:13 PM', message: 'Incident acknowledged by Control Room' },
+      { time: '03:15 PM', message: 'POL-08 and VOL-01 assigned to manage flow' },
+      { time: '03:20 PM', message: 'Batch entry system initiated — situation improving' },
+    ]
+  },
+  {
+    id: 'INC-006', title: 'Medical Emergency — Elderly Dehydration', templeId: 'dwarka',
     location: 'Gomti Ghat Steps', zone: 'Gomti Ghat',
     type: 'Medical Emergency', severity: 'Medium', status: 'Assigned',
     detectedAt: '02:45 PM',
