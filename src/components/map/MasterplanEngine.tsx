@@ -415,23 +415,7 @@ export default function MasterplanEngine({
             })}
 
 
-            {/* ACTIVE INCIDENT PINS */}
-            {layers.incidents && demoIncidents.map((inc, i) => {
-              const color = inc.severity === 'Critical' ? '#DC2626' : inc.severity === 'High' ? '#EA580C' : '#D97706';
-              const offset = i * 20;
-              return (
-                <CircleMarker
-                  key={`inc-pin-${inc.id}`}
-                  center={[inc.y + offset, inc.x + offset]}
-                  radius={9}
-                  pathOptions={{ color, fillColor: color, fillOpacity: 0.9, weight: 2 }}
-                >
-                  <Tooltip permanent={false} className="custom-tooltip">
-                    <div className="text-[10px] font-black">{inc.id}: {inc.title}</div>
-                  </Tooltip>
-                </CircleMarker>
-              );
-            })}
+            {/* ACTIVE INCIDENT PINS (Removed per user request) */}
           </>
         )}
 

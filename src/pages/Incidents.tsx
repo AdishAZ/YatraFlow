@@ -10,9 +10,10 @@ import { IncidentDrawer } from '@/components/ui/IncidentDrawer';
 import { DispatchDrawer } from '@/components/ui/DispatchDrawer';
 import { showToast } from '@/components/ui/Toast';
 import { 
-  ShieldAlert, AlertTriangle, AlertCircle, CheckCircle2, Timer, MapPin, 
-  Activity, Clock, ChevronDown, ChevronUp, Radio, FileText, Crosshair, Zap, Navigation, Plus,
-  Smartphone, Wifi, WifiOff, Siren
+  AlertTriangle, CheckCircle2, ChevronRight, Filter, ShieldAlert,
+  Search, Shield, MapPin, Clock, Users, Activity, Crosshair, Map, Navigation,
+  ChevronDown, ChevronUp, Radio, FileText, Zap, AlertCircle, Eye, RefreshCw,
+  Siren, Wifi, WifiOff, Smartphone, Mic, Volume2, Maximize, Play, CheckSquare, Timer, Plus
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -445,8 +446,18 @@ export default function Incidents() {
                                     <Navigation className="w-2.5 h-2.5" /> Dispatch
                                   </button>
                                   {inc.status === 'Reported' && (
-                                    <button onClick={() => { actions.acknowledgeIncident(inc.id); showToast(`Acknowledged ${inc.id}`, 'success'); }} className="px-1.5 py-1 bg-white border border-blue-200 hover:bg-blue-50 rounded text-[8px] font-bold text-blue-600 uppercase tracking-widest flex items-center gap-1 transition-colors leading-none">
-                                      <CheckCircle2 className="w-2.5 h-2.5" /> Acknowledge
+                                    <button onClick={() => { actions.acknowledgeIncident(inc.id); showToast(`Assigned ${inc.id}`, 'success'); }} className="px-1.5 py-1 bg-white border border-blue-200 hover:bg-blue-50 rounded text-[8px] font-bold text-blue-600 uppercase tracking-widest flex items-center gap-1 transition-colors leading-none">
+                                      <CheckCircle2 className="w-2.5 h-2.5" /> Assign
+                                    </button>
+                                  )}
+                                  {inc.status === 'Assigned' && (
+                                    <button onClick={() => { actions.startIncidentProgress(inc.id); showToast(`Started ${inc.id}`, 'success'); }} className="px-1.5 py-1 bg-white border border-amber-200 hover:bg-amber-50 rounded text-[8px] font-bold text-amber-600 uppercase tracking-widest flex items-center gap-1 transition-colors leading-none">
+                                      <Play className="w-2.5 h-2.5" /> Start
+                                    </button>
+                                  )}
+                                  {inc.status === 'In Progress' && (
+                                    <button onClick={() => { actions.resolveIncident(inc.id); showToast(`Resolved ${inc.id}`, 'success'); }} className="px-1.5 py-1 bg-white border border-emerald-200 hover:bg-emerald-50 rounded text-[8px] font-bold text-emerald-600 uppercase tracking-widest flex items-center gap-1 transition-colors leading-none">
+                                      <CheckSquare className="w-2.5 h-2.5" /> Resolve
                                     </button>
                                   )}
                                   {!isResolved && inc.severity !== 'Critical' && (
