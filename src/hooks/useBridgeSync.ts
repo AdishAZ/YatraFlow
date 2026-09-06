@@ -52,7 +52,8 @@ export interface BridgeState {
   lastSynced: Date | null;
 }
 
-const BRIDGE_URL = 'http://localhost:8000';
+// Use the live localtunnel URL for syncing with deployed Vercel frontend
+const BRIDGE_URL = 'https://real-pugs-try.loca.lt';
 const DEFAULT_STATE: BridgeState = {
   connected: false,
   mobileBookings: [],
