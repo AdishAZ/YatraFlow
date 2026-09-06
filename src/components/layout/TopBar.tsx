@@ -54,7 +54,7 @@ export default function TopBar() {
   };
 
   return (
-    <div className="flex flex-col z-50 bg-[rgba(255,255,255,0.92)] backdrop-blur-[16px] border-b border-slate-200/80 shadow-[0_4px_24px_-8px_rgba(0,0,0,0.05)]">
+    <div className="flex flex-col z-50 bg-[rgba(255,255,255,0.92)] dark:bg-[#0B1221]/95 backdrop-blur-[16px] border-b border-slate-200/80 dark:border-slate-800 shadow-[0_4px_24px_-8px_rgba(0,0,0,0.05)]">
       
       {/* FIRST ROW: Global Controls */}
       <header className="h-[56px] flex items-center justify-between px-6">
@@ -226,7 +226,7 @@ export default function TopBar() {
       </header>
 
       {/* SECOND ROW: Status Chips */}
-      <div className="h-12 px-6 flex items-center gap-4 overflow-x-auto whitespace-nowrap hide-scrollbar border-t border-slate-100/50 bg-white/40">
+      <div className="h-12 px-6 flex items-center gap-4 overflow-x-auto whitespace-nowrap hide-scrollbar border-t border-slate-100/50 dark:border-slate-800/50 bg-white/40 dark:bg-[#080E1A]/40">
         
         {/* Highest Priority - Temple Status & Wait Time */}
         {!liveStats.isOpen ? (

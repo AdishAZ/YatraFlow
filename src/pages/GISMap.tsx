@@ -351,7 +351,7 @@ export default function GISMap() {
   }, [missionStatus, setMissionStatus, toast]);
 
   return (
-    <div className="-m-6 w-[calc(100%+3rem)] h-[calc(100%+3rem)] flex text-slate-800 bg-[#080c12] overflow-hidden">
+    <div className="gis-map-wrapper -m-6 w-[calc(100%+3rem)] h-[calc(100%+3rem)] flex text-slate-800 overflow-hidden">
 
       {/* ── MODALS ── */}
       <AnimatePresence>
@@ -363,8 +363,7 @@ export default function GISMap() {
       {/* COLLAPSIBLE LEFT COMMAND RAIL                                    */}
       {/* ================================================================ */}
       <motion.div
-        className="flex-shrink-0 flex flex-col relative z-10"
-        style={{ background: 'linear-gradient(180deg, #0a1118 0%, #080c12 100%)' }}
+        className="gis-rail flex-shrink-0 flex flex-col relative z-10"
         animate={{ width: panelCollapsed ? 52 : 308 }}
         transition={{ duration: 0.28, ease: [0.4, 0, 0.2, 1] }}
       >
