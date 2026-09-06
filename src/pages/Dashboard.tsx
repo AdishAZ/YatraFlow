@@ -20,11 +20,21 @@ import TempleStatusCard from '@/components/ui/TempleStatusCard';
 import { ExportDialog } from '@/components/ui/ExportDialog';
 import { showToast } from '@/components/ui/Toast';
 import { useDemoState } from '@/hooks/useDemoState';
+import { useOperational } from '@/context/OperationalContext';
 
 export default function Dashboard() {
   const navigate = useNavigate();
-  const { actions } = useDemoState();
+  const { actions, incidents, resources } = useDemoState();
+  const { selectedTemple, globalMetrics, templeInfo } = useOperational();
   const [currentTime, setCurrentTime] = useState(new Date());
+  
+  const activeTempleKPI = TEMPLE_KPIS.find(t => t.templeId === selectedTemple) || TEMPLE_KPIS[0];
+  const activeIncidentsCount = incidents.filter(i => i.templeId === selectedTemple && i.status !== 'Resolved').length;
+  const criticalIncidentsCount = incidents.filter(i => i.templeId === selectedTemple && i.severity === 'Critical' && i.status !== 'Resolved').length;
+  const activeVolunteersCount = resources.filter(r => r.templeId === selectedTemple).length;
+  const activeAlertsCount = actions.getActiveAlertCount(); // Simplified for now
+  
+  const filteredActivityFeed = ACTIVITY_FEED.filter(a => a.templeId === selectedTemple);
   
   const [showExport, setShowExport] = useState(false);
   const [activeTimespan, setActiveTimespan] = useState('Today');
@@ -81,10 +91,10 @@ export default function Dashboard() {
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mt-2">
         <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }}>
           <h1 className="text-3xl font-black tracking-tight text-[#0E1A2B] flex items-center gap-3">
-            Government of Gujarat
+            {templeInfo.name} Command Center
           </h1>
           <p className="text-xl font-medium text-slate-500 mt-1">
-            Pilgrimage Operations Command Center
+            {templeInfo.fullName}
           </p>
         </motion.div>
         <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} className="text-right">
@@ -102,7 +112,7 @@ export default function Dashboard() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
         <MetricCard
           title="Today's Pilgrims"
-          value={STATEWIDE_KPIS.todayPilgrims}
+          value={activeTempleKPI.todayVisitors}
           icon={Users}
           trend={{ value: 14.2, label: 'vs last week' }}
           variant="primary"
@@ -110,7 +120,7 @@ export default function Dashboard() {
         />
         <MetricCard
           title="Currently Inside"
-          value={STATEWIDE_KPIS.currentInside}
+          value={globalMetrics.visitors}
           icon={UserCheck}
           live
           color="text-green-600"
@@ -118,7 +128,7 @@ export default function Dashboard() {
         />
         <MetricCard
           title="Average Queue"
-          value={STATEWIDE_KPIS.avgQueueTime}
+          value={globalMetrics.waitTime}
           suffix="min"
           icon={Clock}
           color="text-amber-500"
@@ -127,8 +137,8 @@ export default function Dashboard() {
         />
         <MetricCard
           title="Incidents"
-          value={actions.getActiveIncidentCount() || STATEWIDE_KPIS.openIncidents}
-          suffix={`${actions.getCriticalCount() || 1} Critical`}
+          value={activeIncidentsCount}
+          suffix={`${criticalIncidentsCount} Critical`}
           icon={AlertTriangle}
           color="text-red-600"
           trend={{ value: 2.1, label: '' }}
@@ -140,14 +150,14 @@ export default function Dashboard() {
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
         <MetricCard
           title="Active Volunteers"
-          value={STATEWIDE_KPIS.activeVolunteers}
+          value={activeVolunteersCount}
           icon={HeartHandshake}
           color="text-green-600"
           variant="secondary"
         />
         <MetricCard
           title="Parking Occupancy"
-          value={STATEWIDE_KPIS.parkingOccupancy}
+          value={activeTempleKPI.parkingOccupancy}
           suffix="%"
           icon={Car}
           color="text-blue-500"
@@ -156,14 +166,14 @@ export default function Dashboard() {
         />
         <MetricCard
           title="Medical Alerts"
-          value={actions.getActiveAlertCount() || STATEWIDE_KPIS.medicalAlerts}
+          value={activeAlertsCount}
           icon={Activity}
           color="text-red-500"
           variant="secondary"
         />
         <MetricCard
           title="AI Risk Level"
-          value={STATEWIDE_KPIS.aiRiskLevel}
+          value={activeTempleKPI.aiRiskLevel}
           icon={Brain}
           color="text-saffron-500"
           variant="secondary"
@@ -197,7 +207,7 @@ export default function Dashboard() {
             <div className="absolute top-2 bottom-2 left-3 w-0.5 bg-slate-100 z-0"></div>
             
             <div className="space-y-6 relative z-10">
-              {ACTIVITY_FEED.map((activity, i) => (
+              {filteredActivityFeed.length > 0 ? filteredActivityFeed.map((activity, i) => (
                 <div key={activity.id} className="flex gap-4 items-start group">
                   <div className="mt-1 bg-white p-1 rounded-full">
                     <div className="w-3 h-3 rounded-full shadow-sm" style={{ backgroundColor: TEMPLES[activity.templeId].color }} />
@@ -210,7 +220,9 @@ export default function Dashboard() {
                     <p className="text-sm font-semibold text-[#0E1A2B] leading-snug group-hover:text-saffron-600 transition-colors">{activity.message}</p>
                   </div>
                 </div>
-              ))}
+              )) : (
+                <div className="text-sm text-slate-400 text-center mt-10">No recent activity</div>
+              )}
             </div>
           </div>
         </motion.div>

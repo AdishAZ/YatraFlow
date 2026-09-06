@@ -4,6 +4,7 @@ import { TEMPLES } from '@/lib/data';
 import type { TempleId } from '@/lib/data';
 import type { DemoIncident } from '@/lib/demoState';
 import { useDemoState } from '@/hooks/useDemoState';
+import { useOperational } from '@/context/OperationalContext';
 import { useBridgeSync } from '@/hooks/useBridgeSync';
 import { IncidentDrawer } from '@/components/ui/IncidentDrawer';
 import { DispatchDrawer } from '@/components/ui/DispatchDrawer';
@@ -27,8 +28,8 @@ const seededRandom = (seed: string, min: number, max: number) => {
 
 export default function Incidents() {
   const { incidents, resources, alerts, actions } = useDemoState();
+  const { selectedTemple } = useOperational();
   const bridge = useBridgeSync(5000); // 🔄 poll bridge for mobile SOS
-  const [selectedTemple, setSelectedTemple] = useState<TempleId | 'all'>('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [expandedIncident, setExpandedIncident] = useState<string | null>(null);
   const [tick, setTick] = useState(0);
@@ -47,7 +48,7 @@ export default function Incidents() {
 
   const filteredIncidents = useMemo(() => {
     return incidents.filter(inc => {
-      const matchTemple = selectedTemple === 'all' || inc.templeId === selectedTemple;
+      const matchTemple = inc.templeId === selectedTemple;
       const matchSearch = inc.title.toLowerCase().includes(searchQuery.toLowerCase()) || inc.id.toLowerCase().includes(searchQuery.toLowerCase());
       return matchTemple && matchSearch;
     }).map(inc => {
@@ -246,14 +247,7 @@ export default function Incidents() {
           {/* RIGHT: FILTERS */}
           <div className="flex items-center w-full xl:w-[35%] shrink-0 xl:border-l border-slate-200 xl:pl-4">
              <div className="flex gap-2 w-full">
-               <select className="w-1/3 min-w-0 bg-slate-50 border border-slate-200 rounded text-[10px] font-bold text-[#0E1A2B] px-2 py-1.5 outline-none"
-                 onChange={(e) => setSelectedTemple(e.target.value as any)}>
-                 <option value="all">All Temples</option>
-                 <option value="somnath">Somnath</option>
-                 <option value="dwarka">Dwarka</option>
-                 <option value="ambaji">Ambaji</option>
-               </select>
-               <input type="text" placeholder="Search..." 
+               <input type="text" placeholder="Search incidents..." 
                  className="flex-1 min-w-0 bg-slate-50 border border-slate-200 rounded text-[10px] font-bold text-[#0E1A2B] px-2 py-1.5 outline-none placeholder:text-slate-400"
                  value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
                <button onClick={() => { setDrawerMode('create'); setShowIncidentDrawer(true); }} className="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1.5 rounded text-[10px] font-bold tracking-widest uppercase flex items-center gap-1 transition-colors whitespace-nowrap">

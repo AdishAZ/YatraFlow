@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion, type Variants } from 'framer-motion';
+import { useOperational } from '@/context/OperationalContext';
 import { 
   ComposedChart, AreaChart, Area, BarChart, Bar, LineChart, Line, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar,
   XAxis, YAxis, CartesianGrid, Tooltip as RechartsTooltip, ResponsiveContainer, Legend
@@ -135,7 +136,7 @@ const IncidentHeatmap = () => {
 };
 
 export default function Analytics() {
-  const [activeTemple, setActiveTemple] = useState('All Temples');
+  const { selectedTemple, templeInfo } = useOperational();
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -158,22 +159,7 @@ export default function Analytics() {
             <BrainCircuit className="w-6 h-6 text-primary" />
             AI Intelligence Center
           </h1>
-          <p className="text-sm text-secondary mt-1">Predictive analytics and deep learning insights across Gujarat temples.</p>
-        </div>
-        
-        <div className="flex bg-surface border border-border rounded-lg p-1">
-          {['All Temples', 'Somnath', 'Ambaji'].map(tab => (
-            <button
-              key={tab}
-              onClick={() => setActiveTemple(tab)}
-              className={cn(
-                "px-4 py-1.5 text-xs font-medium rounded-md transition-colors",
-                activeTemple === tab ? "bg-primary text-white shadow-sm" : "text-secondary hover:text-text hover:bg-card"
-              )}
-            >
-              {tab}
-            </button>
-          ))}
+          <p className="text-sm text-secondary mt-1">Predictive analytics and deep learning insights for {templeInfo.fullName}.</p>
         </div>
       </div>
 

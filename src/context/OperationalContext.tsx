@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useMemo, type ReactNode } from 'react';
-import { TEMPLES, CAMERA_FEEDS, type TempleId, type TempleInfo, type CameraFeed } from '@/lib/data';
+import { TEMPLES, CAMERA_FEEDS, TEMPLE_KPIS, type TempleId, type TempleInfo, type CameraFeed } from '@/lib/data';
 
 interface OperationalContextType {
   selectedTemple: TempleId;
@@ -35,6 +35,19 @@ export function OperationalProvider({ children }: { children: ReactNode }) {
     aiConfidence: 98,
     waitTime: 45
   });
+
+  React.useEffect(() => {
+    // Reset base metrics when temple switches
+    const kpi = TEMPLE_KPIS.find(k => k.templeId === selectedTemple);
+    if (kpi) {
+      setGlobalMetrics({
+        crowdLevel: kpi.densityPct || kpi.crowdDensity,
+        visitors: kpi.currentVisitors,
+        aiConfidence: 95,
+        waitTime: kpi.avgWaitMin || kpi.avgQueueTime
+      });
+    }
+  }, [selectedTemple]);
 
   React.useEffect(() => {
     const timer = setInterval(() => {
