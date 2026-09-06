@@ -1,0 +1,86 @@
+﻿[
+    {
+        "id":  "H-D01",
+        "x":  1202,
+        "y":  682,
+        "intensity":  "critical",
+        "label":  "Temple Core Overcrowding"
+    },
+    {
+        "id":  "H-D02",
+        "x":  682,
+        "y":  262,
+        "intensity":  "high",
+        "label":  "Moksha Dwar Queue"
+    },
+    {
+        "id":  "H-D03",
+        "x":  658,
+        "y":  866,
+        "intensity":  "high",
+        "label":  "Swarg Dwar Steps"
+    },
+    {
+        "id":  "H-D04",
+        "x":  664,
+        "y":  534,
+        "intensity":  "critical",
+        "label":  "Gomti Ghat Bathing Area"
+    },
+    {
+        "id":  "H-D05",
+        "x":  982,
+        "y":  262,
+        "intensity":  "medium",
+        "label":  "Ghat Expansion"
+    },
+    {
+        "id":  "H-D06",
+        "x":  940,
+        "y":  740,
+        "intensity":  "medium",
+        "label":  "Sudama Setu Entry"
+    },
+    {
+        "id":  "H-D07",
+        "x":  980,
+        "y":  780,
+        "intensity":  "low",
+        "label":  "Bridge Span"
+    },
+    {
+        "id":  "H-D08",
+        "x":  368,
+        "y":  610,
+        "intensity":  "medium",
+        "label":  "Visitor Plaza"
+    },
+    {
+        "id":  "H-D09",
+        "x":  288,
+        "y":  312,
+        "intensity":  "low",
+        "label":  "Market Road"
+    },
+    {
+        "id":  "H-D10",
+        "x":  450,
+        "y":  800,
+        "intensity":  "low",
+        "label":  "Approach Road"
+    },
+    {
+        "id":  "H-D11",
+        "x":  400,
+        "y":  280,
+        "intensity":  "low",
+        "label":  "Parking Lot"
+    },
+    {
+        "id":  "H-D12",
+        "x":  792,
+        "y":  150,
+        "intensity":  "medium",
+        "label":  "Marine Approach"
+    }
+]

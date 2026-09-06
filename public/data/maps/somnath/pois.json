@@ -1,0 +1,154 @@
+[
+  {
+    "id": "POI-001",
+    "name": "Somnath Temple",
+    "type": "temple",
+    "x": 350,
+    "y": 750,
+    "desc": "Main Garbhagriha"
+  },
+  {
+    "id": "POI-002",
+    "name": "Visitors Plaza",
+    "type": "gate",
+    "x": 500,
+    "y": 650,
+    "desc": "Main Concourse"
+  },
+  {
+    "id": "POI-003",
+    "name": "Ahilyabai Temple",
+    "type": "temple",
+    "x": 550,
+    "y": 950,
+    "desc": "Historic Shrine"
+  },
+  {
+    "id": "POI-004",
+    "name": "Prabhas Patan Museum",
+    "type": "museum",
+    "x": 650,
+    "y": 850,
+    "desc": "Ancient Artifacts"
+  },
+  {
+    "id": "POI-005",
+    "name": "Craft Market",
+    "type": "washroom",
+    "x": 700,
+    "y": 450,
+    "desc": "Local Souvenirs"
+  },
+  {
+    "id": "POI-006",
+    "name": "Lakshmi Narayan Mandir",
+    "type": "temple",
+    "x": 900,
+    "y": 550,
+    "desc": "Temple Complex"
+  },
+  {
+    "id": "POI-007",
+    "name": "Parking",
+    "type": "gate",
+    "x": 1250,
+    "y": 550,
+    "desc": "Main Central Parking"
+  },
+  {
+    "id": "POI-008",
+    "name": "Beach Promenade",
+    "type": "water",
+    "x": 650,
+    "y": 350,
+    "desc": "Coastal Walkway"
+  },
+  {
+    "id": "POI-009",
+    "name": "New Beach Access",
+    "type": "gate",
+    "x": 900,
+    "y": 400,
+    "desc": "Steps to the Sea"
+  },
+  {
+    "id": "POI-010",
+    "name": "Beachfront Park",
+    "type": "water",
+    "x": 800,
+    "y": 200,
+    "desc": "Scenic Gardens"
+  },
+  {
+    "id": "POI-011",
+    "name": "Jetty",
+    "type": "water",
+    "x": 1250,
+    "y": 50,
+    "desc": "Pier Access"
+  },
+  {
+    "id": "POI-012",
+    "name": "Tourist Facilitation Centre",
+    "type": "medical",
+    "x": 1050,
+    "y": 1100,
+    "desc": "Help & Information"
+  },
+  {
+    "id": "POI-013",
+    "name": "Cultural Village",
+    "type": "museum",
+    "x": 1300,
+    "y": 950,
+    "desc": "Heritage Experience"
+  },
+  {
+    "id": "POI-014",
+    "name": "Relocated Bus Stand",
+    "type": "gate",
+    "x": 1750,
+    "y": 1050,
+    "desc": "Public Transport Hub"
+  },
+  {
+    "id": "POI-015",
+    "name": "Newly Constructed Parking",
+    "type": "gate",
+    "x": 1600,
+    "y": 850,
+    "desc": "Overflow Parking"
+  },
+  {
+    "id": "POI-016",
+    "name": "Proposed Parking",
+    "type": "gate",
+    "x": 1500,
+    "y": 600,
+    "desc": "Future Expansion"
+  },
+  {
+    "id": "POI-017",
+    "name": "Entry Gateway",
+    "type": "gate",
+    "x": 1700,
+    "y": 550,
+    "desc": "Roundabout Junction"
+  },
+  {
+    "id": "POI-018",
+    "name": "Rudreshwar Mahadev Temple",
+    "type": "temple",
+    "x": 1600,
+    "y": 450,
+    "desc": "Local Shrine"
+  },
+  {
+    "id": "POI-019",
+    "name": "Shri Ram Temple",
+    "type": "temple",
+    "x": 1400,
+    "y": 250,
+    "desc": "Local Shrine"
+  }
+]

@@ -1,0 +1,10 @@
+{
+  "id": "dwarka",
+  "name": "Dwarkadhish Temple",
+  "imageUrl": "/data/maps/dwarka/dwarka-masterplan.jpg",
+  "bounds": [[0, 0], [1000, 1600]],
+  "center": [500, 800],
+  "defaultZoom": 0,
+  "minZoom": -1,
+  "maxZoom": 2
+}

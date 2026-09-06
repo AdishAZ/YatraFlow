@@ -1,0 +1,22 @@
+{
+  "id": "somnath",
+  "name": "Shree Somnath Jyotirlinga Masterplan",
+  "bounds": [
+    [
+      0,
+      0
+    ],
+    [
+      1250,
+      2000
+    ]
+  ],
+  "imageUrl": "/maps/somnath-masterplan-v3.jpg",
+  "center": [
+    625,
+    1000
+  ],
+  "defaultZoom": -0.5,
+  "minZoom": -2,
+  "maxZoom": 3
+}

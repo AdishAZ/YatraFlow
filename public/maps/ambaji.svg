@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <style>
+    .terrain { fill: #F8FAFC; }
+    .road { fill: none; stroke: #FFFFFF; stroke-width: 24; stroke-linecap: round; stroke-linejoin: round; }
+    .road-border { fill: none; stroke: #E2E8F0; stroke-width: 32; stroke-linecap: round; stroke-linejoin: round; }
+    .path { fill: none; stroke: #F1F5F9; stroke-width: 12; stroke-dasharray: 8 4; stroke-linecap: round; }
+    .queue-corridor { fill: none; stroke: #E2E8F0; stroke-width: 40; stroke-linecap: round; }
+    .queue-line { fill: none; stroke: #94A3B8; stroke-width: 2; stroke-dasharray: 4 4; stroke-linecap: round; }
+    .building { fill: #FFFFFF; stroke: #CBD5E1; stroke-width: 2; rx: 6; ry: 6; }
+    .temple-plaza { fill: #FEF2F2; stroke: #FECACA; stroke-width: 3; rx: 12; ry: 12; }
+    .temple-core { fill: #FFFFFF; stroke: #DC2626; stroke-width: 4; rx: 4; ry: 4; }
+    .garden { fill: #ECFDF5; stroke: #A7F3D0; stroke-width: 1; rx: 8; ry: 8; }
+    .label { font-family: -apple-system, sans-serif; font-size: 12px; font-weight: 600; fill: #475569; pointer-events: none; }
+    .label-title { font-size: 18px; font-weight: 900; fill: #1E293B; pointer-events: none; text-anchor: middle; }
+    .label-red { fill: #DC2626; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
+  </style>
+
+  <!-- Terrain -->
+  <rect width="800" height="600" class="terrain" />
+
+  <!-- Main Approach Roads -->
+  <path d="M 400 600 L 400 350" class="road-border" />
+  <path d="M 400 600 L 400 350" class="road" />
+  
+  <path d="M 0 350 L 800 350" class="road-border" />
+  <path d="M 0 350 L 800 350" class="road" />
+
+  <!-- Massive Queue Complex (Ziz-zag lines) -->
+  <path d="M 400 500 L 600 500 L 600 420 L 450 420 L 450 370" class="queue-corridor" />
+  <path d="M 400 500 L 600 500 L 600 420 L 450 420 L 450 370" class="queue-line" />
+  
+  <path d="M 400 500 L 200 500 L 200 420 L 350 420 L 350 370" class="queue-corridor" />
+  <path d="M 400 500 L 200 500 L 200 420 L 350 420 L 350 370" class="queue-line" />
+
+  <!-- Gardens -->
+  <rect x="50" y="50" width="200" height="250" class="garden" />
+  <rect x="550" y="50" width="200" height="250" class="garden" />
+  <rect x="50" y="400" width="100" height="150" class="garden" />
+  <rect x="650" y="400" width="100" height="150" class="garden" />
+
+  <!-- Chachar Chowk (Main Temple Plaza) -->
+  <rect x="250" y="80" width="300" height="250" class="temple-plaza" />
+
+  <!-- Ambaji Main Shrine (White Marble) -->
+  <g transform="translate(400, 180)">
+    <!-- Base -->
+    <rect x="-60" y="-50" width="120" height="100" class="temple-core" />
+    
+    <!-- Shikhara (Golden Cones represented top-down) -->
+    <circle cx="0" cy="-10" r="24" fill="#FEF08A" stroke="#EAB308" stroke-width="2" />
+    <circle cx="0" cy="-10" r="8" fill="#EAB308" />
+    
+    <!-- Flag Mast -->
+    <line x1="0" y1="-10" x2="0" y2="-60" stroke="#94A3B8" stroke-width="2" />
+    <polygon points="0,-60 20,-55 0,-50" fill="#EF4444" />
+  </g>
+
+  <!-- Surrounding Infrastructure -->
+  <rect x="300" y="300" width="200" height="40" class="building" /> <!-- Main Gate Building -->
+  <circle cx="400" cy="320" r="8" fill="#EF4444" /> <!-- Entry Point -->
+
+  <rect x="150" y="150" width="80" height="100" class="building" /> <!-- VIP / Admin -->
+  <rect x="570" y="150" width="80" height="100" class="building" /> <!-- Prasad Counters -->
+  
+  <rect x="280" y="40" width="240" height="30" class="building" /> <!-- Yatri Niwas / Rest area behind temple -->
+
+  <!-- Mansarovar Lake (Top Right) -->
+  <path d="M 600 40 Q 650 30 700 40 Q 720 80 700 120 Q 650 130 600 120 Q 580 80 600 40 Z" fill="#BAE6FD" stroke="#7DD3FC" stroke-width="2" />
+
+  <!-- Labels -->
+  <text x="400" y="260" class="label-title">Shree Arasuri Ambaji</text>
+  <text x="400" y="275" class="label" text-anchor="middle">Chachar Chowk</text>
+  
+  <text x="400" y="350" class="label-red" text-anchor="middle">Main Shakti Dwar (Entry)</text>
+  
+  <text x="190" y="200" class="label" text-anchor="middle">Trust Office</text>
+  <text x="610" y="195" class="label" text-anchor="middle">Mohanthal Prasad</text>
+  <text x="610" y="210" class="label" text-anchor="middle">Counters</text>
+  
+  <text x="400" y="55" class="label" text-anchor="middle">Yatri Niwas (Rest House)</text>
+
+  <text x="650" y="85" class="label" fill="#0284C7" font-style="italic">Mansarovar</text>
+  <text x="650" y="100" class="label" fill="#0284C7" font-style="italic">Lake</text>
+
+  <text x="300" y="520" class="label" text-anchor="middle">General Queue A</text>
+  <text x="500" y="520" class="label" text-anchor="middle">General Queue B</text>
+
+  <!-- Direction to Gabbar -->
+  <path d="M 50 150 L 20 150 L 30 140 M 20 150 L 30 160" stroke="#DC2626" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+  <text x="60" y="155" class="label-red">3 km to Gabbar Hill</text>
+
+</svg>

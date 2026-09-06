@@ -1,0 +1,191 @@
+[
+  {
+    "id": "CAM-02-1",
+    "name": "CAM-02",
+    "x": 268,
+    "y": 861,
+    "rotation": -45
+  },
+  {
+    "id": "CAM-02-2",
+    "name": "CAM-02",
+    "x": 349,
+    "y": 924,
+    "rotation": 180
+  },
+  {
+    "id": "CAM-02-3",
+    "name": "CAM-02",
+    "x": 70,
+    "y": 929,
+    "rotation": 45
+  },
+  {
+    "id": "CAM-03-1",
+    "name": "CAM-03",
+    "x": 941,
+    "y": 1126,
+    "rotation": 135
+  },
+  {
+    "id": "CAM-08-1",
+    "name": "CAM-08",
+    "x": 1056,
+    "y": 998,
+    "rotation": 225
+  },
+  {
+    "id": "CAM-09-1",
+    "name": "CAM-09",
+    "x": 1360,
+    "y": 1160,
+    "rotation": 180
+  },
+  {
+    "id": "CAM-28-1",
+    "name": "CAM-28",
+    "x": 1860,
+    "y": 1160,
+    "rotation": 225
+  },
+  {
+    "id": "CAM-08-2",
+    "name": "CAM-08",
+    "x": 910,
+    "y": 971,
+    "rotation": 180
+  },
+  {
+    "id": "CAM-02-4",
+    "name": "CAM-02",
+    "x": 777,
+    "y": 821,
+    "rotation": 225
+  },
+  {
+    "id": "CAM-08-3",
+    "name": "CAM-08",
+    "x": 753,
+    "y": 736,
+    "rotation": 135
+  },
+  {
+    "id": "CAM-13-1",
+    "name": "CAM-13",
+    "x": 922,
+    "y": 794,
+    "rotation": 225
+  },
+  {
+    "id": "CAM-08-4",
+    "name": "CAM-08",
+    "x": 1208,
+    "y": 964,
+    "rotation": 180
+  },
+  {
+    "id": "CAM-13-2",
+    "name": "CAM-13",
+    "x": 1399,
+    "y": 1003,
+    "rotation": 225
+  },
+  {
+    "id": "CAM-13-3",
+    "name": "CAM-13",
+    "x": 1445,
+    "y": 690,
+    "rotation": 180
+  },
+  {
+    "id": "CAM-13-4",
+    "name": "CAM-13",
+    "x": 1577,
+    "y": 708,
+    "rotation": -90
+  },
+  {
+    "id": "CAM-28-2",
+    "name": "CAM-28",
+    "x": 1860,
+    "y": 860,
+    "rotation": -90
+  },
+  {
+    "id": "CAM-28-3",
+    "name": "CAM-28",
+    "x": 1760,
+    "y": 660,
+    "rotation": -90
+  },
+  {
+    "id": "CAM-03-2",
+    "name": "CAM-03",
+    "x": 338,
+    "y": 756,
+    "rotation": 135
+  },
+  {
+    "id": "CAM-13-5",
+    "name": "CAM-13",
+    "x": 519,
+    "y": 605,
+    "rotation": 45
+  },
+  {
+    "id": "CAM-08-5",
+    "name": "CAM-08",
+    "x": 804,
+    "y": 486,
+    "rotation": -45
+  },
+  {
+    "id": "CAM-28-4",
+    "name": "CAM-28",
+    "x": 866,
+    "y": 627,
+    "rotation": -45
+  },
+  {
+    "id": "CAM-28-5",
+    "name": "CAM-28",
+    "x": 1310,
+    "y": 410,
+    "rotation": -90
+  },
+  {
+    "id": "CAM-28-6",
+    "name": "CAM-28",
+    "x": 1063,
+    "y": 702,
+    "rotation": 0
+  },
+  {
+    "id": "CAM-12-1",
+    "name": "CAM-12",
+    "x": 1543,
+    "y": 563,
+    "rotation": -90
+  },
+  {
+    "id": "CAM-28-7",
+    "name": "CAM-28",
+    "x": 1479,
+    "y": 377,
+    "rotation": -90
+  },
+  {
+    "id": "CAM-28-8",
+    "name": "CAM-28",
+    "x": 950,
+    "y": 636,
+    "rotation": 0
+  },
+  {
+    "id": "CAM-25-1",
+    "name": "CAM-25",
+    "x": 1072,
+    "y": 769,
+    "rotation": -45
+  }
+]

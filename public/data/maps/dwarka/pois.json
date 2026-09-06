@@ -1,0 +1,26 @@
+﻿[
+    {
+        "id":  "POI-D1",
+        "name":  "Dwarkadhish Temple",
+        "type":  "temple",
+        "x":  700,
+        "y":  500,
+        "desc":  "Main Temple"
+    },
+    {
+        "id":  "POI-D2",
+        "name":  "Gomti Ghat",
+        "type":  "water",
+        "x":  800,
+        "y":  450,
+        "desc":  "Holy Dip"
+    },
+    {
+        "id":  "POI-D3",
+        "name":  "Sudama Setu",
+        "type":  "gate",
+        "x":  950,
+        "y":  750,
+        "desc":  "Suspension Bridge"
+    }
+]

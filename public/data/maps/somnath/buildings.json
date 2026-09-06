@@ -1,0 +1,38 @@
+[
+  { 
+    "id": "BLD-001", "name": "Somnath Temple", "type": "temple", "color": "#F59E0B",
+    "polygon": [[400, 800], [300, 800], [250, 750], [250, 650], [300, 600], [400, 600], [450, 650], [450, 750]]
+  },
+  { 
+    "id": "BLD-002", "name": "Prabhas Patan Museum", "type": "museum", "color": "#8B5CF6",
+    "polygon": [[600, 900], [600, 800], [700, 800], [700, 900]]
+  },
+  { 
+    "id": "BLD-003", "name": "Ahilyabai Temple", "type": "temple", "color": "#F59E0B",
+    "polygon": [[520, 970], [520, 930], [580, 930], [580, 970]]
+  },
+  { 
+    "id": "BLD-004", "name": "Lakshmi Narayan Mandir", "type": "temple", "color": "#F59E0B",
+    "polygon": [[870, 580], [870, 520], [930, 520], [930, 580]]
+  },
+  { 
+    "id": "BLD-005", "name": "Rudreshwar Mahadev Temple", "type": "temple", "color": "#F59E0B",
+    "polygon": [[1570, 480], [1570, 420], [1630, 420], [1630, 480]]
+  },
+  { 
+    "id": "BLD-006", "name": "Shri Ram Temple", "type": "temple", "color": "#F59E0B",
+    "polygon": [[1370, 280], [1370, 220], [1430, 220], [1430, 280]]
+  },
+  { 
+    "id": "BLD-007", "name": "Tourist Facilitation Centre", "type": "admin", "color": "#3B82F6",
+    "polygon": [[1000, 1150], [1000, 1050], [1100, 1050], [1100, 1150]]
+  },
+  { 
+    "id": "BLD-008", "name": "Cultural Village Block", "type": "cultural", "color": "#EC4899",
+    "polygon": [[1200, 1000], [1200, 900], [1350, 900], [1350, 1000]]
+  },
+  { 
+    "id": "BLD-009", "name": "Craft Market", "type": "market", "color": "#14B8A6",
+    "polygon": [[670, 480], [670, 420], [730, 420], [730, 480]]
+  }
+]

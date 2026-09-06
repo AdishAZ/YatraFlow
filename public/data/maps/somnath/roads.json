@@ -1,0 +1,23 @@
+[
+  {
+    "id": "ROAD-001",
+    "name": "Main Entrance Road",
+    "type": "road",
+    "color": "#334155",
+    "coordinates": [[1250, 1800], [1050, 1750], [800, 1720], [600, 1700], [550, 1700]]
+  },
+  {
+    "id": "ROAD-002",
+    "name": "Bus Stand Access",
+    "type": "road",
+    "color": "#334155",
+    "coordinates": [[1050, 1750], [1050, 1850]]
+  },
+  {
+    "id": "ROAD-003",
+    "name": "Temple Circulation Road",
+    "type": "road",
+    "color": "#334155",
+    "coordinates": [[600, 1700], [700, 1650], [850, 1600], [850, 1500], [850, 1400], [750, 1300], [650, 1300], [550, 1300]]
+  }
+]

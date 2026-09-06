@@ -1,0 +1,1 @@
+export interface CameraEvent { id: string; cameraId: string; timestamp: number; type: 'alert' | 'status' | 'detection' | 'risk' | 'incident'; message: string; severity: 'info' | 'warning' | 'critical'; }

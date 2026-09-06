@@ -1,0 +1,140 @@
+[
+  {
+    "id": "L1",
+    "name": "Somnath Temple",
+    "x": 228,
+    "y": 866
+  },
+  {
+    "id": "L2",
+    "name": "Visitors Plaza",
+    "x": 601,
+    "y": 633
+  },
+  {
+    "id": "L3",
+    "name": "Ahilyabai Temple",
+    "x": 736,
+    "y": 787
+  },
+  {
+    "id": "L4",
+    "name": "Prabhas Patan Museum",
+    "x": 922,
+    "y": 822
+  },
+  {
+    "id": "L5",
+    "name": "Craft Market",
+    "x": 749,
+    "y": 566
+  },
+  {
+    "id": "L6",
+    "name": "Lakshmi Narayan Mandir",
+    "x": 879,
+    "y": 648
+  },
+  {
+    "id": "L7",
+    "name": "Parking",
+    "x": 1156,
+    "y": 662
+  },
+  {
+    "id": "L8",
+    "name": "Beach Promenade",
+    "x": 978,
+    "y": 427
+  },
+  {
+    "id": "L9",
+    "name": "New Beach Access",
+    "x": 826,
+    "y": 186
+  },
+  {
+    "id": "L10",
+    "name": "Beachfront Park",
+    "x": 488,
+    "y": 403
+  },
+  {
+    "id": "L11",
+    "name": "Jetty",
+    "x": 1096,
+    "y": 104
+  },
+  {
+    "id": "L12",
+    "name": "Tourist Facilitation Centre",
+    "x": 1029,
+    "y": 1013
+  },
+  {
+    "id": "L13",
+    "name": "Cultural Village",
+    "x": 1323,
+    "y": 923
+  },
+  {
+    "id": "L14",
+    "name": "Relocated Bus Stand",
+    "x": 1578,
+    "y": 1048
+  },
+  {
+    "id": "L15",
+    "name": "Newly Constructed Parking",
+    "x": 1527,
+    "y": 892
+  },
+  {
+    "id": "L16",
+    "name": "Proposed Parking",
+    "x": 1357,
+    "y": 618
+  },
+  {
+    "id": "L17",
+    "name": "Entry Gateway",
+    "x": 1459,
+    "y": 694
+  },
+  {
+    "id": "L18",
+    "name": "Rudreshwar Mahadev Temple",
+    "x": 1548,
+    "y": 576
+  },
+  {
+    "id": "L19",
+    "name": "Shri Ram Temple",
+    "x": 1501,
+    "y": 393
+  },
+  {
+    "id": "L20",
+    "name": "Towards Proposed Riverfront",
+    "x": 1957,
+    "y": 293
+  },
+  {
+    "id": "L21",
+    "name": "Shore Protection Stones/Boulders",
+    "x": 510,
+    "y": 194
+  },
+  {
+    "id": "L22",
+    "name": "Shore Protection Tetrapods",
+    "x": 254,
+    "y": 389
+  },
+  {
+    "id": "L23",
+    "name": "New Beach Access",
+    "x": 832,
+    "y": 491
+  }
+]

@@ -1,0 +1,86 @@
+﻿[
+    {
+        "id":  "L1",
+        "name":  "Bet Dwarka Ferry Point",
+        "x":  190,
+        "y":  718
+    },
+    {
+        "id":  "L2",
+        "name":  "Lighthouse",
+        "x":  198,
+        "y":  576
+    },
+    {
+        "id":  "L3",
+        "name":  "Singh Dwar",
+        "x":  224,
+        "y":  452
+    },
+    {
+        "id":  "L4",
+        "name":  "Gomti Ghat",
+        "x":  368,
+        "y":  316
+    },
+    {
+        "id":  "L5",
+        "name":  "Gomti River",
+        "x":  408,
+        "y":  68
+    },
+    {
+        "id":  "L6",
+        "name":  "Swarg Dwar",
+        "x":  658,
+        "y":  844
+    },
+    {
+        "id":  "L7",
+        "name":  "Temple Plaza",
+        "x":  652,
+        "y":  718
+    },
+    {
+        "id":  "L8",
+        "name":  "Dwarkadhish Temple",
+        "x":  644,
+        "y":  548
+    },
+    {
+        "id":  "L9",
+        "name":  "Moksha Dwar (Exit)",
+        "x":  626,
+        "y":  240
+    },
+    {
+        "id":  "L10",
+        "name":  "Security Check",
+        "x":  918,
+        "y":  756
+    },
+    {
+        "id":  "L11",
+        "name":  "Shoe Stand",
+        "x":  968,
+        "y":  608
+    },
+    {
+        "id":  "L12",
+        "name":  "Information Centre",
+        "x":  1016,
+        "y":  380
+    },
+    {
+        "id":  "L13",
+        "name":  "Toilets",
+        "x":  1226,
+        "y":  318
+    },
+    {
+        "id":  "L14",
+        "name":  "Car / Bus Parking",
+        "x":  1206,
+        "y":  704
+    }
+]

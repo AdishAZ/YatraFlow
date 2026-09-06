@@ -1,0 +1,26 @@
+[
+  { 
+    "id": "BND-001", "name": "Visitor Plaza Boundary", "type": "plaza", "color": "#E2E8F0",
+    "polygon": [[450, 700], [450, 600], [600, 600], [600, 700]]
+  },
+  { 
+    "id": "BND-002", "name": "Main Parking Campus", "type": "parking", "color": "#94A3B8",
+    "polygon": [[1100, 650], [1100, 500], [1450, 450], [1450, 600]]
+  },
+  { 
+    "id": "BND-003", "name": "Beach Promenade", "type": "promenade", "color": "#FDE047",
+    "polygon": [[200, 300], [200, 200], [1200, 200], [1200, 300], [800, 400], [500, 450]]
+  },
+  { 
+    "id": "BND-004", "name": "Newly Constructed Parking", "type": "parking", "color": "#94A3B8",
+    "polygon": [[1500, 950], [1500, 850], [1700, 800], [1700, 900]]
+  },
+  { 
+    "id": "BND-005", "name": "Proposed Parking", "type": "parking", "color": "#CBD5E1",
+    "polygon": [[1450, 650], [1450, 550], [1550, 500], [1550, 600]]
+  },
+  { 
+    "id": "BND-006", "name": "Green Belt & Gardens", "type": "garden", "color": "#22C55E",
+    "polygon": [[400, 600], [400, 400], [500, 400], [500, 500]]
+  }
+]

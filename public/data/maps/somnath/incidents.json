@@ -1,0 +1,5 @@
+[
+  { "id": "INC-001", "type": "medical", "severity": "high", "x": 680, "y": 620, "desc": "Heat exhaustion in Queue Line 1", "time": "14:30" },
+  { "id": "INC-002", "type": "crowd", "severity": "medium", "x": 720, "y": 450, "desc": "Minor congestion at exit gate", "time": "14:45" },
+  { "id": "INC-003", "type": "lost-child", "severity": "high", "x": 800, "y": 800, "desc": "Missing 5yo boy reported near Museum", "time": "14:50" }
+]

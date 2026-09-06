@@ -1,0 +1,100 @@
+[
+  {
+    "id": "H-01",
+    "x": 1237,
+    "y": 624,
+    "intensity": "critical",
+    "label": "Queue Entry Surge"
+  },
+  {
+    "id": "H-02",
+    "x": 243,
+    "y": 851,
+    "intensity": "critical",
+    "label": "Main Gate Crush"
+  },
+  {
+    "id": "H-03",
+    "x": 970,
+    "y": 749,
+    "intensity": "high",
+    "label": "Temple Core"
+  },
+  {
+    "id": "H-04",
+    "x": 550,
+    "y": 660,
+    "intensity": "high",
+    "label": "Inner Sanctum Queue"
+  },
+  {
+    "id": "H-05",
+    "x": 700,
+    "y": 500,
+    "intensity": "medium",
+    "label": "Visitor Plaza"
+  },
+  {
+    "id": "H-06",
+    "x": 805,
+    "y": 816,
+    "intensity": "high",
+    "label": "North Holding Bay"
+  },
+  {
+    "id": "H-07",
+    "x": 911,
+    "y": 935,
+    "intensity": "medium",
+    "label": "Western Queue"
+  },
+  {
+    "id": "H-08",
+    "x": 601,
+    "y": 526,
+    "intensity": "low",
+    "label": "Beach Promenade"
+  },
+  {
+    "id": "H-09",
+    "x": 766,
+    "y": 637,
+    "intensity": "low",
+    "label": "New Beach Access"
+  },
+  {
+    "id": "H-10",
+    "x": 1050,
+    "y": 1080,
+    "intensity": "low",
+    "label": "Tourist Centre"
+  },
+  {
+    "id": "H-11",
+    "x": 1322,
+    "y": 936,
+    "intensity": "low",
+    "label": "Cultural Village"
+  },
+  {
+    "id": "H-12",
+    "x": 1580,
+    "y": 830,
+    "intensity": "medium",
+    "label": "New Parking"
+  },
+  {
+    "id": "H-13",
+    "x": 1720,
+    "y": 1030,
+    "intensity": "medium",
+    "label": "Bus Stand"
+  },
+  {
+    "id": "H-14",
+    "x": 1600,
+    "y": 560,
+    "intensity": "low",
+    "label": "Northern Approach"
+  }
+]

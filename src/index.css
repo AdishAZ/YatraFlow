@@ -1,0 +1,334 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Hidden scrollbar utility */
+.hidden-scrollbar::-webkit-scrollbar { display: none; }
+.hidden-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   BHARAT DESIGN SYSTEM â€” YatraFlow Platform
+   Government of Gujarat Â· AI-Powered Pilgrimage
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: #F8F7F2;
+    color: #2B2B2B;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Premium Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(107, 114, 128, 0.2);
+    border-radius: 100px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 153, 51, 0.4);
+  }
+}
+
+@layer components {
+  /* â”€â”€ Glassmorphism â”€â”€ */
+  .glass {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(229, 231, 235, 0.8);
+  }
+
+  .glass-card {
+    background: rgba(255, 253, 248, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(229, 231, 235, 0.8);
+    border-radius: 16px;
+    transition: all 0.3s ease;
+  }
+
+  .glass-card:hover {
+    border-color: rgba(255, 153, 51, 0.3);
+    box-shadow: 0 4px 20px -4px rgba(255, 153, 51, 0.1);
+  }
+
+  /* â”€â”€ Cards â”€â”€ */
+  .card-base {
+    background: #FFFDF8;
+    border: 1px solid #E5E7EB;
+    border-radius: 16px;
+    padding: 1.25rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 8px -2px rgba(0, 0, 0, 0.05);
+  }
+
+  .card-base:hover {
+    border-color: rgba(255, 153, 51, 0.3);
+    box-shadow:
+      0 4px 16px -4px rgba(0, 0, 0, 0.08),
+      0 0 24px -4px rgba(255, 153, 51, 0.1);
+    transform: translateY(-1px);
+  }
+
+  .card-surface {
+    background: #FFFFFF;
+    border: 1px solid rgba(229, 231, 235, 0.8);
+    border-radius: 12px;
+    padding: 1rem;
+  }
+
+  /* â”€â”€ Typography â”€â”€ */
+  .metric-value {
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.025em;
+    color: #111827;
+  }
+
+  .section-title {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #6B7280;
+  }
+
+  /* â”€â”€ Live Indicators â”€â”€ */
+  .live-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #138808;
+    animation: livePulse 2s ease-in-out infinite;
+    box-shadow: 0 0 8px rgba(19, 136, 8, 0.4);
+  }
+
+  .live-dot-critical {
+    background: #D32F2F;
+    animation: livePulse 1s ease-in-out infinite;
+    box-shadow: 0 0 8px rgba(211, 47, 47, 0.4);
+  }
+
+  /* â”€â”€ Status Badges â”€â”€ */
+  .status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+  }
+
+  /* â”€â”€ Progress Bars â”€â”€ */
+  .progress-bar {
+    height: 6px;
+    border-radius: 100px;
+    background: rgba(229, 231, 235, 0.8);
+    overflow: hidden;
+  }
+
+  .progress-bar-fill {
+    height: 100%;
+    border-radius: 100px;
+    transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* â”€â”€ Kanban â”€â”€ */
+  .kanban-column {
+    background: rgba(248, 247, 242, 0.8);
+    border: 1px solid #E5E7EB;
+    border-radius: 16px;
+    min-height: 400px;
+  }
+
+  /* â”€â”€ Chat â”€â”€ */
+  .chat-bubble {
+    max-width: 85%;
+    padding: 1rem 1.25rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .chat-bubble-user {
+    background: linear-gradient(135deg, #FF9933, #EA580C);
+    color: white;
+    border-bottom-right-radius: 6px;
+    margin-left: auto;
+    box-shadow: 0 4px 12px -2px rgba(255, 153, 51, 0.3);
+  }
+
+  .chat-bubble-ai {
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    color: #2B2B2B;
+    border-bottom-left-radius: 6px;
+  }
+
+  /* â”€â”€ Buttons â”€â”€ */
+  .btn-saffron {
+    background: linear-gradient(135deg, #FFB066, #FF9933);
+    color: white;
+    font-weight: 600;
+    padding: 0.625rem 1.5rem;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 12px -2px rgba(255, 153, 51, 0.3);
+  }
+
+  .btn-saffron:hover {
+    background: linear-gradient(135deg, #FF9933, #EA580C);
+    box-shadow: 0 6px 20px -4px rgba(255, 153, 51, 0.4);
+    transform: translateY(-1px);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: #FF9933;
+    font-weight: 600;
+    padding: 0.625rem 1.5rem;
+    border-radius: 12px;
+    border: 1.5px solid rgba(255, 153, 51, 0.4);
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .btn-outline:hover {
+    background: rgba(255, 153, 51, 0.08);
+    border-color: #FF9933;
+  }
+
+  /* â”€â”€ Portal Cards â”€â”€ */
+  .portal-card {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 16px;
+    padding: 1.25rem;
+    box-shadow: 0 4px 24px -6px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .portal-card:hover {
+    box-shadow: 0 8px 32px -8px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, #FF9933, #EA580C);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bharat-gradient {
+    background: linear-gradient(135deg, #138808, #FF9933);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .saffron-gradient-bg {
+    background: linear-gradient(135deg, #FFB066, #FF9933);
+  }
+}
+
+/* â”€â”€ Keyframe Animations â”€â”€ */
+@keyframes livePulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+@keyframes dash {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes chakraSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes saffronPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+/* â”€â”€ Leaflet Theme Overrides (Clean White/Map Style) â”€â”€ */
+.leaflet-container {
+  background: #F8F7F2 !important;
+  border-radius: 16px;
+}
+
+.leaflet-control-zoom a {
+  background: #FFFDF8 !important;
+  color: #2B2B2B !important;
+  border-color: #E5E7EB !important;
+  border-radius: 8px !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+}
+
+.leaflet-control-zoom a:hover {
+  background: #F8F7F2 !important;
+  color: #FF9933 !important;
+}
+
+.leaflet-popup-content-wrapper {
+  background: #FFFDF8 !important;
+  color: #2B2B2B !important;
+  border-radius: 12px !important;
+  border: 1px solid #E5E7EB !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+}
+
+.leaflet-popup-tip {
+  background: #FFFDF8 !important;
+}
+
+.leaflet-popup-close-button {
+  color: #6B7280 !important;
+}
+
+/* â”€â”€ Landmark marker fix â”€â”€ */
+.landmark-marker,
+.camera-marker,
+.incident-marker,
+.poi-marker {
+  background: transparent !important;
+  border: none !important;
+}
+
+/* â”€â”€ Hide Scrollbar â”€â”€ */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+

@@ -1,0 +1,21 @@
+[
+  { "id": "LND-001", "name": "Somnath Temple", "type": "temple", "x": 350, "y": 750, "desc": "Main Garbhagriha" },
+  { "id": "LND-002", "name": "Visitors Plaza", "type": "gate", "x": 500, "y": 650, "desc": "Main Concourse" },
+  { "id": "LND-003", "name": "Ahilyabai Temple", "type": "temple", "x": 550, "y": 950, "desc": "Historic Shrine" },
+  { "id": "LND-004", "name": "Prabhas Patan Museum", "type": "museum", "x": 650, "y": 850, "desc": "Ancient Artifacts" },
+  { "id": "LND-005", "name": "Craft Market", "type": "market", "x": 700, "y": 450, "desc": "Local Souvenirs" },
+  { "id": "LND-006", "name": "Lakshmi Narayan Mandir", "type": "temple", "x": 900, "y": 550, "desc": "Temple Complex" },
+  { "id": "LND-007", "name": "Parking", "type": "parking", "x": 1250, "y": 550, "desc": "Main Central Parking" },
+  { "id": "LND-008", "name": "Beach Promenade", "type": "water", "x": 650, "y": 350, "desc": "Coastal Walkway" },
+  { "id": "LND-009", "name": "New Beach Access", "type": "gate", "x": 900, "y": 400, "desc": "Steps to the Sea" },
+  { "id": "LND-010", "name": "Beachfront Park", "type": "garden", "x": 800, "y": 200, "desc": "Scenic Gardens" },
+  { "id": "LND-011", "name": "Jetty", "type": "water", "x": 1250, "y": 50, "desc": "Pier Access" },
+  { "id": "LND-012", "name": "Tourist Facilitation Centre", "type": "admin", "x": 1050, "y": 1100, "desc": "Help & Information" },
+  { "id": "LND-013", "name": "Cultural Village", "type": "cultural", "x": 1300, "y": 950, "desc": "Heritage Experience" },
+  { "id": "LND-014", "name": "Relocated Bus Stand", "type": "transit", "x": 1750, "y": 1050, "desc": "Public Transport Hub" },
+  { "id": "LND-015", "name": "Newly Constructed Parking", "type": "parking", "x": 1600, "y": 850, "desc": "Overflow Parking" },
+  { "id": "LND-016", "name": "Proposed Parking", "type": "parking", "x": 1500, "y": 600, "desc": "Future Expansion" },
+  { "id": "LND-017", "name": "Entry Gateway", "type": "transit", "x": 1700, "y": 550, "desc": "Roundabout Junction" },
+  { "id": "LND-018", "name": "Rudreshwar Mahadev Temple", "type": "temple", "x": 1600, "y": 450, "desc": "Local Shrine" },
+  { "id": "LND-019", "name": "Shri Ram Temple", "type": "temple", "x": 1400, "y": 250, "desc": "Local Shrine" }
+]

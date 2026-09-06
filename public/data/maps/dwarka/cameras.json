@@ -1,0 +1,107 @@
+﻿[
+    {
+        "id":  "CAM-01",
+        "name":  "CAM-01",
+        "x":  652,
+        "y":  852,
+        "rotation":  0
+    },
+    {
+        "id":  "CAM-02",
+        "name":  "CAM-02",
+        "x":  800,
+        "y":  800,
+        "rotation":  0
+    },
+    {
+        "id":  "CAM-03",
+        "name":  "CAM-03",
+        "x":  232,
+        "y":  708,
+        "rotation":  0
+    },
+    {
+        "id":  "CAM-04",
+        "name":  "CAM-04",
+        "x":  360,
+        "y":  568,
+        "rotation":  0
+    },
+    {
+        "id":  "CAM-05",
+        "name":  "CAM-05",
+        "x":  618,
+        "y":  378,
+        "rotation":  0
+    },
+    {
+        "id":  "CAM-06",
+        "name":  "CAM-06",
+        "x":  642,
+        "y":  676,
+        "rotation":  0
+    },
+    {
+        "id":  "CAM-07",
+        "name":  "CAM-07",
+        "x":  868,
+        "y":  676,
+        "rotation":  0
+    },
+    {
+        "id":  "CAM-08",
+        "name":  "CAM-08",
+        "x":  938,
+        "y":  842,
+        "rotation":  0
+    },
+    {
+        "id":  "CAM-09",
+        "name":  "CAM-09",
+        "x":  1096,
+        "y":  854,
+        "rotation":  0
+    },
+    {
+        "id":  "CAM-10",
+        "name":  "CAM-10",
+        "x":  198,
+        "y":  412,
+        "rotation":  0
+    },
+    {
+        "id":  "CAM-11",
+        "name":  "CAM-11",
+        "x":  444,
+        "y":  840,
+        "rotation":  0
+    },
+    {
+        "id":  "CAM-12",
+        "name":  "CAM-12",
+        "x":  1074,
+        "y":  370,
+        "rotation":  0
+    },
+    {
+        "id":  "CAM-13",
+        "name":  "CAM-13",
+        "x":  534,
+        "y":  196,
+        "rotation":  0
+    },
+    {
+        "id":  "CAM-14",
+        "name":  "CAM-14",
+        "x":  772,
+        "y":  264,
+        "rotation":  0
+    },
+    {
+        "id":  "CAM-15",
+        "name":  "CAM-15",
+        "x":  1044,
+        "y":  200,
+        "rotation":  0
+    }
+]
