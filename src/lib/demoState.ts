@@ -274,7 +274,15 @@ class DemoStateImpl {
   acknowledgeIncident(id: string) {
     const now = new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true });
     this.incidents = this.incidents.map(i =>
-      i.id === id ? { ...i, status: 'Assigned' as IncidentStatus, timeline: [...i.timeline, { time: now, message: 'Incident acknowledged by Control Room' }] } : i
+      i.id === id ? { ...i, status: 'Assigned' as IncidentStatus, timeline: [...i.timeline, { time: now, message: 'Incident acknowledged and assigned by Control Room' }] } : i
+    );
+    this.notify();
+  }
+
+  startIncidentProgress(id: string) {
+    const now = new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true });
+    this.incidents = this.incidents.map(i =>
+      i.id === id ? { ...i, status: 'In Progress' as IncidentStatus, timeline: [...i.timeline, { time: now, message: 'Response operations started on ground' }] } : i
     );
     this.notify();
   }
