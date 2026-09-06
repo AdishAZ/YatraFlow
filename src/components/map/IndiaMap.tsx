@@ -60,9 +60,9 @@ export default function IndiaMap() {
         zoomControl={false}
         attributionControl={false}
       >
-        {/* CartoDB Voyager tiles (clean, light, colored map with green land/blue water) */}
+        {/* OpenStreetMap Standard Tiles */}
         <TileLayer
-          url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution=""
         />
         <MapController selectedTemple={selectedTemple} temples={MAP_DATA} />

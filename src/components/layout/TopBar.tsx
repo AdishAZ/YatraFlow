@@ -6,14 +6,17 @@ import {
   Radio,
   Command,
   Sun,
+  Moon,
   AlertTriangle
 } from 'lucide-react';
 import { useOperational } from '@/context/OperationalContext';
+import { useTheme } from '@/context/ThemeContext';
 import { TEMPLE_LIST, type TempleId } from '@/lib/data';
 import { useDemoState } from '@/hooks/useDemoState';
 import { cn } from '@/lib/utils';
 
 export default function TopBar() {
+  const { theme, toggleTheme } = useTheme();
   const { selectedTemple, setSelectedTemple, templeInfo, missionStatus, setMissionStatus, globalMetrics } = useOperational();
   const [time, setTime] = useState(new Date());
   const [templeDropdownOpen, setTempleDropdownOpen] = useState(false);
@@ -210,6 +213,10 @@ export default function TopBar() {
           </div>
 
           <div className="w-px h-6 bg-slate-200/80 hidden sm:block flex-shrink-0" />
+
+          <button onClick={toggleTheme} className="p-2 rounded-lg hover:bg-slate-100 transition-colors text-slate-500 hover:text-slate-900 flex-shrink-0" title="Toggle Dark/Light Mode">
+            {theme === 'light' ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
+          </button>
 
           <button className="relative p-2 rounded-lg hover:bg-slate-100 transition-colors text-slate-500 hover:text-slate-900 flex-shrink-0">
             <Bell className="w-4 h-4" />

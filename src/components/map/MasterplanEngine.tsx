@@ -479,34 +479,6 @@ export default function MasterplanEngine({
           onClose={() => setSelectedZone(null)}
         />
       )}
-
-      {/* Admin Controls (Editor Only) */}
-      {mode === 'admin' && (
-        <div className="absolute bottom-6 left-6 z-[400] flex flex-col gap-2 pointer-events-none">
-          <div className="bg-white/95 backdrop-blur-xl border border-slate-200 rounded-2xl p-3 shadow-card-lg pointer-events-auto flex items-center gap-2">
-            <button 
-              onClick={() => setIsEditMode(!isEditMode)}
-              className={cn(
-                "h-10 px-4 rounded-xl flex items-center justify-center gap-2 font-bold text-sm transition-all",
-                isEditMode ? "bg-amber-100 text-amber-700 border border-amber-300 shadow-sm" : "bg-slate-50 text-slate-600 border border-slate-200 hover:bg-slate-100"
-              )}
-            >
-              <Edit3 className="w-4 h-4" />
-              {isEditMode ? "Exit Edit Mode" : "Map Edit Mode"}
-            </button>
-            
-            {isEditMode && (
-              <button 
-                onClick={() => setShowExport(true)}
-                className="h-10 px-4 rounded-xl bg-slate-900 text-white flex items-center justify-center gap-2 font-bold text-sm shadow-md hover:bg-slate-800 transition-colors"
-              >
-                <Save className="w-4 h-4" />
-                Export Changes
-              </button>
-            )}
-          </div>
-        </div>
-      )}
       
       {/* JSON Export Modal */}
       {showExport && isEditMode && (

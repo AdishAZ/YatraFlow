@@ -238,7 +238,7 @@ function BroadcastModal({ onClose, onConfirm }: { onClose: () => void; onConfirm
 // MAIN COMPONENT
 // ═══════════════════════════════════════
 export default function GISMap() {
-  const { selectedTemple, globalMetrics, setMissionStatus, missionStatus } = useOperational();
+  const { selectedTemple, globalMetrics, setMissionStatus, missionStatus, activeCameraId } = useOperational();
   const { incidents, resources, alerts: activeAlerts } = useDemoState();
 
   const [isLoading, setIsLoading] = useState(true);
@@ -673,16 +673,20 @@ export default function GISMap() {
           </AnimatePresence>
 
           {/* Top-right: minimap */}
-          <div className="absolute top-3 right-3 z-[400] pointer-events-auto">
-            <div className="w-[160px] h-[160px] bg-white/92 rounded-xl shadow-2xl border border-black/10 overflow-hidden ring-4 ring-[#0E1A2B]/50">
-              <IndiaMap />
+          {!activeCameraId && (
+            <div className="absolute top-3 right-3 z-[400] pointer-events-auto">
+              <div className="w-[200px] h-[200px] bg-white/92 rounded-xl shadow-2xl border border-black/10 overflow-hidden ring-4 ring-[#0E1A2B]/50 transition-all duration-300">
+                <IndiaMap />
+              </div>
             </div>
-          </div>
+          )}
 
           {/* Bottom-right: map layers */}
-          <div className="absolute bottom-3 right-3 z-[400] pointer-events-auto">
-            <LayerToggle layers={activeLayers} counts={{ guards: 15, cameras: 12, incidents: demoIncidentPins.length, zones: 5, heatmap: 15 }} onToggle={toggleLayer} />
-          </div>
+          {!activeCameraId && (
+            <div className="absolute bottom-3 right-3 z-[400] pointer-events-auto scale-90 origin-bottom-right transition-all duration-300">
+              <LayerToggle layers={activeLayers} counts={{ guards: 15, cameras: 12, incidents: demoIncidentPins.length, zones: 5, heatmap: 15 }} onToggle={toggleLayer} />
+            </div>
+          )}
 
           {/* Top-center: scenario pill */}
           <div className="absolute top-3 left-1/2 -translate-x-1/2 z-[400] pointer-events-none">

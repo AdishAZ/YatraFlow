@@ -1,7 +1,8 @@
 import { Outlet, Link, useLocation } from 'react-router-dom';
 import { useOperational, OperationalProvider } from '@/context/OperationalContext';
+import { useTheme } from '@/context/ThemeContext';
 import { PORTAL_DATA } from '@/lib/portalData';
-import { Map, CalendarClock, Compass, PhoneCall, Bot, Menu, X, CheckCircle2, User, Bell, ChevronDown } from 'lucide-react';
+import { Map, CalendarClock, Compass, PhoneCall, Bot, Menu, X, CheckCircle2, User, Bell, ChevronDown, Sun, Moon } from 'lucide-react';
 import { useState } from 'react';
 import { cn } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -15,6 +16,7 @@ export default function PortalLayout() {
 }
 
 function PortalLayoutContent() {
+  const { theme, toggleTheme } = useTheme();
   const { templeInfo, setSelectedTemple } = useOperational();
   const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -160,6 +162,9 @@ function PortalLayoutContent() {
             {/* Right Actions */}
             <div className="hidden md:flex items-center gap-4">
               <div className="w-px h-6 bg-slate-200 mx-1" />
+              <button onClick={toggleTheme} className="w-10 h-10 rounded-full hover:bg-sandstone-100 flex items-center justify-center text-slate-400 hover:text-slate-900 transition-colors relative" title="Toggle Dark/Light Mode">
+                {theme === 'light' ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
+              </button>
               <button className="w-10 h-10 rounded-full hover:bg-sandstone-100 flex items-center justify-center text-slate-400 transition-colors relative">
                 <Bell className="w-5 h-5" />
                 <span className="absolute top-2 right-2 w-2 h-2 bg-saffron-500 rounded-full animate-saffron-pulse" />
