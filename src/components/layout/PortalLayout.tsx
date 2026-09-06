@@ -86,7 +86,7 @@ function PortalLayoutContent() {
               </div>
               <div>
                 <div className="text-lg font-extrabold tracking-tight text-slate-900 flex items-center gap-2">
-                  YatraFlow
+                  Darshan
                   <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-saffron-50 text-saffron-600 uppercase tracking-widest border border-saffron-200/50">Govt. of Gujarat</span>
                 </div>
                 <div className="text-xs text-slate-400 font-medium tracking-wide">
@@ -239,12 +239,12 @@ function PortalLayoutContent() {
                 <Compass className="w-5 h-5 text-white" />
               </div>
               <div>
-                <div className="text-sm font-bold">YatraFlow</div>
+                <div className="text-sm font-bold">Darshan</div>
                 <div className="text-[10px] text-slate-500 tracking-wider uppercase">Government of Gujarat · Digital India</div>
               </div>
             </div>
             <div className="text-xs text-slate-500 text-center">
-              © 2025 YatraFlow — AI-Powered Pilgrimage Management System · Government of Gujarat
+              © 2025 Darshan — AI-Powered Pilgrimage Management System · Government of Gujarat
             </div>
           </div>
         </div>
@@ -267,7 +267,7 @@ function PortalLayoutContent() {
                     <Bot className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <div className="text-base font-bold text-white">YatraFlow AI</div>
+                    <div className="text-base font-bold text-white">Darshan AI</div>
                     <div className="text-xs text-white/80 font-medium">Digital FAQ Assistant</div>
                   </div>
                 </div>

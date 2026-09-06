@@ -1,5 +1,5 @@
 /**
- * YatraFlow Bridge Server
+ * Darshan Bridge Server
  * ========================
  * Local REST bridge running on port 8000.
  * - Android app (via NetworkClient.kt) posts bookings & SOS incidents here
@@ -129,7 +129,7 @@ function nowIso() {
 
 // Health Check
 app.get('/api/health', (req, res) => {
-  res.json({ status: 'ok', server: 'YatraFlow Bridge', port: PORT, timestamp: nowIso() });
+  res.json({ status: 'ok', server: 'Darshan Bridge', port: PORT, timestamp: nowIso() });
 });
 
 // ── TEMPLES ──────────────────────────────────
@@ -263,7 +263,7 @@ app.get('/api/sos', (req, res) => {
 app.listen(PORT, '0.0.0.0', () => {
   console.log('');
   console.log('╔══════════════════════════════════════════════╗');
-  console.log('║   YatraFlow Bridge Server  — Running!       ║');
+  console.log('║   Darshan Bridge Server  — Running!       ║');
   console.log(`║   http://localhost:${PORT}                      ║`);
   console.log('║                                              ║');
   console.log('║   Android app → POST /api/bookings          ║');

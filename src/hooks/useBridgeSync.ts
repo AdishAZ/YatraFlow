@@ -1,7 +1,7 @@
 /**
  * useBridgeSync
  * ==============
- * Polls the YatraFlow Bridge Server (localhost:8000) at a configurable
+ * Polls the Darshan Bridge Server (localhost:8000) at a configurable
  * interval and returns the latest data. Handles errors gracefully so the
  * web app still works even if the bridge server is not running.
  */
@@ -53,7 +53,7 @@ export interface BridgeState {
 }
 
 // Use the live localtunnel URL for syncing with deployed Vercel frontend
-const BRIDGE_URL = 'https://yatraflow-bridge-server-2026.loca.lt';
+const BRIDGE_URL = 'https://Darshan-bridge-server-2026.loca.lt';
 const DEFAULT_STATE: BridgeState = {
   connected: false,
   mobileBookings: [],

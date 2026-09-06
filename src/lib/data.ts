@@ -1,5 +1,5 @@
 // ============================================================
-// YatraFlow — GIS Digital Twin 2.0 (SVH26008)
+// Darshan — GIS Digital Twin 2.0 (SVH26008)
 // Government of Gujarat · Integrated Command & Control Centre (ICCC)
 // Somnath · Dwarkadhish · Ambaji · Pavagadh
 // ============================================================
@@ -960,7 +960,7 @@ export const REPORT_DATA: ReportRow[] = [
 ];
 
 export const AI_CHAT_MESSAGES = [
-  { id: 'MSG-1', role: 'assistant', sender: 'ai', content: 'Good morning Commander. YatraFlow AI Copilot is monitoring Somnath, Dwarka, Ambaji, and Pavagadh edge feeds. Current risk index across Gujarat is NOMINAL, with a moderate surge developing at Ambaji Chachar Chowk.', text: 'Good morning Commander. YatraFlow AI Copilot is monitoring Somnath, Dwarka, Ambaji, and Pavagadh edge feeds. Current risk index across Gujarat is NOMINAL, with a moderate surge developing at Ambaji Chachar Chowk.', timestamp: '11:00 AM', time: '11:00 AM' },
+  { id: 'MSG-1', role: 'assistant', sender: 'ai', content: 'Good morning Commander. Darshan AI Copilot is monitoring Somnath, Dwarka, Ambaji, and Pavagadh edge feeds. Current risk index across Gujarat is NOMINAL, with a moderate surge developing at Ambaji Chachar Chowk.', text: 'Good morning Commander. Darshan AI Copilot is monitoring Somnath, Dwarka, Ambaji, and Pavagadh edge feeds. Current risk index across Gujarat is NOMINAL, with a moderate surge developing at Ambaji Chachar Chowk.', timestamp: '11:00 AM', time: '11:00 AM' },
   { id: 'MSG-2', role: 'user', sender: 'user', content: 'What is the projected surge for Somnath during the 07:00 PM Sandhya Maha Aarti?', text: 'What is the projected surge for Somnath during the 07:00 PM Sandhya Maha Aarti?', timestamp: '11:02 AM', time: '11:02 AM' },
   { id: 'MSG-3', role: 'assistant', sender: 'ai', content: 'Simulation forecast indicates a peak inflow of 4,200 devotees between 06:30 PM and 07:15 PM at Somnath. Recommend activating Holding Bay 2, pre-staging 8 QRF officers at Digvijay Dwar, and throttling Parking Lot B bus departures.', text: 'Simulation forecast indicates a peak inflow of 4,200 devotees between 06:30 PM and 07:15 PM at Somnath. Recommend activating Holding Bay 2, pre-staging 8 QRF officers at Digvijay Dwar, and throttling Parking Lot B bus departures.', timestamp: '11:03 AM', time: '11:03 AM' },
 ];

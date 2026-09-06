@@ -236,7 +236,7 @@ export default function AICopilot() {
       // Add system prompt context
       apiMessages.unshift({
         role: 'system',
-        content: 'You are YatraFlow AI, a specialized Command Center assistant for Temple Crowd Management. Provide concise, operational responses. Use formatting like **bold** for emphasis, ⚠ for alerts, and markdown tables for tabular data if applicable.'
+        content: 'You are Darshan AI, a specialized Command Center assistant for Temple Crowd Management. Provide concise, operational responses. Use formatting like **bold** for emphasis, ⚠ for alerts, and markdown tables for tabular data if applicable.'
       });
 
       const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
@@ -312,7 +312,7 @@ export default function AICopilot() {
               </div>
               <div>
                 <h2 className="text-lg font-bold text-[#0E1A2B] dark:text-white flex items-center gap-2">
-                  YatraFlow AI
+                  Darshan AI
                 </h2>
                 <div className="flex items-center gap-2 text-xs font-mono mt-0.5">
                   <span className="text-primary font-bold">ONLINE</span>
@@ -383,7 +383,7 @@ export default function AICopilot() {
                   <div className="bg-primary/20 p-1 rounded">
                     <Bot className="w-4 h-4 text-primary" />
                   </div>
-                  <span className="text-xs font-bold text-text dark:text-white tracking-wide">YatraFlow AI</span>
+                  <span className="text-xs font-bold text-text dark:text-white tracking-wide">Darshan AI</span>
                   <span className="text-[10px] text-secondary dark:text-slate-400 font-mono ml-2">{msg.timestamp}</span>
                 </div>
               )}
@@ -421,7 +421,7 @@ export default function AICopilot() {
                 <div className="bg-primary/20 p-1 rounded">
                   <Bot className="w-4 h-4 text-primary" />
                 </div>
-                <span className="text-xs font-bold text-text dark:text-white tracking-wide">YatraFlow AI</span>
+                <span className="text-xs font-bold text-text dark:text-white tracking-wide">Darshan AI</span>
               </div>
               <div className="p-5 bg-surface/80 dark:bg-[#1E293B]/80 border border-border/80 dark:border-slate-700/80 rounded-2xl rounded-tl-sm flex items-center gap-1.5 h-14">
                 <div className="w-2 h-2 rounded-full bg-primary/60 animate-bounce" style={{ animationDelay: '0ms' }} />
@@ -441,7 +441,7 @@ export default function AICopilot() {
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
               onKeyDown={(e) => { if (e.key === 'Enter') handleSend(); }}
-              placeholder="Query YatraFlow intelligence or request a simulation..." 
+              placeholder="Query Darshan intelligence or request a simulation..." 
               className="w-full relative bg-surface dark:bg-[#0B1221] border border-border/80 dark:border-slate-700 rounded-xl pl-5 pr-14 py-4 text-[15px] text-text dark:text-white placeholder:text-secondary dark:placeholder:text-slate-500 focus:outline-none focus:border-primary/60 focus:ring-1 focus:ring-primary/60 shadow-inner transition-all"
             />
             <button 

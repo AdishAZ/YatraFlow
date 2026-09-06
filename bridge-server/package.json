@@ -1,7 +1,7 @@
 {
-  "name": "yatraflow-bridge-server",
+  "name": "Darshan-bridge-server",
   "version": "1.0.0",
-  "description": "Local bridge server — syncs Android app data with the YatraFlow web admin dashboard",
+  "description": "Local bridge server — syncs Android app data with the Darshan web admin dashboard",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

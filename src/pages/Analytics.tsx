@@ -128,7 +128,7 @@ const IncidentHeatmap = () => {
           <span>High Risk</span>
         </div>
         <span className="flex items-center gap-1">
-          <BrainCircuit className="w-3 h-3 text-primary" /> Powered by YatraFlow AI
+          <BrainCircuit className="w-3 h-3 text-primary" /> Powered by Darshan AI
         </span>
       </div>
     </div>

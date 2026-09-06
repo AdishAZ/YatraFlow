@@ -99,7 +99,7 @@ export default function Sidebar() {
               className="overflow-hidden whitespace-nowrap"
             >
               <div className="text-sm font-bold tracking-wide text-slate-900 dark:text-white flex items-center gap-1.5">
-                <span className="text-gradient">YatraFlow</span>
+                <span className="text-gradient">Darshan</span>
                 <span className="text-[8px] font-mono px-1.5 py-0.5 rounded-md bg-saffron-50 dark:bg-saffron-500/20 text-saffron-600 dark:text-saffron-400 uppercase font-bold tracking-widest border border-saffron-200 dark:border-saffron-500/30">OPS</span>
               </div>
               <div className="text-[10px] text-slate-500 dark:text-slate-400 tracking-wider uppercase font-medium">

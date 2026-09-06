@@ -409,7 +409,7 @@ class DemoStateImpl {
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `YatraFlow_${type.replace(/\s+/g, '_')}_${Date.now()}.txt`;
+    a.download = `Darshan_${type.replace(/\s+/g, '_')}_${Date.now()}.txt`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
@@ -426,7 +426,7 @@ class DemoStateImpl {
 
     return `
 ════════════════════════════════════════════════════════
-YATRAFLOW ICCC — OPERATIONAL REPORT
+Darshan ICCC — OPERATIONAL REPORT
 ════════════════════════════════════════════════════════
 
 Report Type:    ${type}
@@ -465,7 +465,7 @@ ACTIVE ALERTS
 ${activeAlerts.map(a => `[${a.severity}] ${a.message} — ${a.timestamp}`).join('\n')}
 
 ════════════════════════════════════════════════════════
-END OF REPORT — YATRAFLOW ICCC
+END OF REPORT — Darshan ICCC
 ════════════════════════════════════════════════════════
 `.trim();
   }

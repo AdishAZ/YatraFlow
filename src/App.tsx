@@ -35,7 +35,7 @@ function PageLoader() {
           <div className="absolute inset-[18px] w-3 h-3 rounded-full bg-saffron-500/30" />
         </div>
         <div className="text-center">
-          <div className="text-lg font-bold bharat-gradient tracking-wide">YatraFlow</div>
+          <div className="text-lg font-bold bharat-gradient tracking-wide">Darshan</div>
           <div className="text-[10px] text-secondary/50 font-medium uppercase tracking-[0.15em] mt-1">
             Government of Gujarat · ICCC
           </div>
