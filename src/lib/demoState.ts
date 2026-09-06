@@ -147,6 +147,30 @@ const SEED_INCIDENTS: DemoIncident[] = [
       { time: '03:32 PM', message: 'Patrol units dispatched to intercept' },
     ]
   },
+  {
+    id: 'INC-007', title: 'Suspicious Bag Near Shoe Stand', templeId: 'somnath',
+    location: 'Shoe Collection Center', zone: 'Entry Gateway',
+    type: 'Security', severity: 'Medium', status: 'Reported',
+    detectedAt: '03:45 PM',
+    assignedResources: [],
+    recommendation: 'Dispatch BDDS unit for inspection and cordon area',
+    timeline: [
+      { time: '03:45 PM', message: 'Bag reported abandoned by volunteer' },
+    ]
+  },
+  {
+    id: 'INC-008', title: 'Minor Stampede Risk Managed', templeId: 'somnath',
+    location: 'VIP Corridor Gate', zone: 'VIP Dwar Corridor',
+    type: 'Crowd Surge', severity: 'High', status: 'Resolved',
+    detectedAt: '01:20 PM',
+    assignedResources: ['POL-05', 'VOL-12'],
+    recommendation: 'Holding area cleared, regular flow restored',
+    timeline: [
+      { time: '01:20 PM', message: 'Temporary surge detected at VIP check' },
+      { time: '01:25 PM', message: 'Officers dispatched to manage queue' },
+      { time: '01:40 PM', message: 'Crowd dispersed, normal operations resumed' },
+    ]
+  },
 ];
 
 const SEED_RESOURCES: DemoResource[] = [
