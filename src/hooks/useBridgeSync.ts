@@ -34,12 +34,13 @@ export interface MobileIncident {
 
 export interface BridgeBookingSlot {
   id: string;
-  templeId: string;
+  templeId: 'somnath' | 'dwarka' | 'ambaji' | 'pavagadh';
   type: string;
   time: string;
   capacity: number;
   booked: number;
   mobileCount: number;
+  aiRecommendation?: string;
 }
 
 export interface BridgeState {
