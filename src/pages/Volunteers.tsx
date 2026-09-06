@@ -27,7 +27,7 @@ const seededRandom = (seed: string, min: number, max: number) => {
 };
 
 export default function Volunteers() {
-  const { activeTemple } = useOperational();
+  const { selectedTemple } = useOperational();
   const [activeCategory, setActiveCategory] = useState<ResourceCategoryFilter>('All');
   const [searchQuery, setSearchQuery] = useState('');
   const [tick, setTick] = useState(0);
@@ -66,12 +66,12 @@ export default function Volunteers() {
 
   const filteredResources = useMemo(() => {
     return resources.filter((r) => {
-      const matchesTemple = r.templeId === activeTemple.id;
+      const matchesTemple = r.templeId === selectedTemple;
       const matchesCategory = activeCategory === 'All' || r.role === activeCategory;
       const matchesSearch = r.teamName.toLowerCase().includes(searchQuery.toLowerCase()) || r.name.toLowerCase().includes(searchQuery.toLowerCase());
       return matchesTemple && matchesCategory && matchesSearch;
     });
-  }, [resources, activeTemple.id, activeCategory, searchQuery]);
+  }, [resources, selectedTemple, activeCategory, searchQuery]);
 
   return (
     <div className="space-y-6 pb-12 bg-[#F8F8F5] min-h-screen relative">
