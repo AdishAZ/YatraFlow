@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useSidebar } from './AppLayout';
 import { NavLink, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -17,10 +18,12 @@ import {
   Settings,
   ChevronLeft,
   ChevronRight,
+  ChevronDown,
   Shield,
   LayoutDashboard,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useOperational } from '@/context/OperationalContext';
 
 interface NavSection {
   title: string;
@@ -71,6 +74,8 @@ const NAV_SECTIONS: NavSection[] = [
 export default function Sidebar() {
   const { collapsed, setCollapsed } = useSidebar();
   const location = useLocation();
+  const { missionStatus, setMissionStatus } = useOperational();
+  const [statusDropdownOpen, setStatusDropdownOpen] = useState(false);
 
   return (
     <motion.aside
@@ -165,14 +170,60 @@ export default function Sidebar() {
         ))}
       </nav>
 
+      {/* OPCON Selector */}
+      {!collapsed && (
+        <div className="px-3 pb-2 border-t border-slate-100 dark:border-slate-800 pt-3 relative">
+          <button
+            onClick={() => setStatusDropdownOpen(!statusDropdownOpen)}
+            className={cn(
+              'flex items-center justify-between w-full px-3 py-2 rounded-lg border text-[11px] font-black uppercase tracking-wider transition-all',
+              missionStatus === 'NOMINAL'
+                ? 'bg-emerald-50 border-emerald-200 text-emerald-700 dark:bg-emerald-500/10 dark:border-emerald-500/20 dark:text-emerald-400'
+                : missionStatus === 'ELEVATED'
+                ? 'bg-orange-50 border-orange-200 text-orange-600 dark:bg-orange-500/10 dark:border-orange-500/20 dark:text-orange-400'
+                : 'bg-red-50 border-red-200 text-red-700 dark:bg-red-500/10 dark:border-red-500/20 dark:text-red-400'
+            )}
+          >
+            <div className="flex items-center gap-2">
+              <span
+                className={cn(
+                  'w-2 h-2 rounded-full',
+                  missionStatus === 'NOMINAL' ? 'bg-emerald-500' : missionStatus === 'ELEVATED' ? 'bg-orange-500' : 'bg-red-500 animate-pulse'
+                )}
+              />
+              <span>OPCON: {missionStatus.substring(0, 3)}</span>
+            </div>
+            <ChevronDown className="w-3 h-3 opacity-50" />
+          </button>
+          
+          {statusDropdownOpen && (
+            <div className="absolute left-3 right-3 bottom-full mb-2 bg-white dark:bg-[#121E33] border border-slate-200 dark:border-slate-800 rounded-xl shadow-xl p-2 z-50">
+              {['NOMINAL', 'ELEVATED', 'CRITICAL'].map((status) => (
+                <button
+                  key={status}
+                  onClick={() => { setMissionStatus(status as any); setStatusDropdownOpen(false); }}
+                  className={cn(
+                    "w-full text-left px-3 py-2 rounded-lg text-[11px] font-black transition-colors",
+                    status === 'NOMINAL' ? "text-emerald-700 hover:bg-emerald-50 dark:text-emerald-400 dark:hover:bg-emerald-500/10" : 
+                    status === 'ELEVATED' ? "text-orange-700 hover:bg-orange-50 dark:text-orange-400 dark:hover:bg-orange-500/10" : "text-red-700 hover:bg-red-50 dark:text-red-400 dark:hover:bg-red-500/10"
+                  )}
+                >
+                  OPCON: {status}
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
+      )}
+
       {/* Portal Link */}
       {!collapsed && (
-        <div className="px-3 pb-2 border-t border-slate-100 pt-3">
+        <div className="px-3 pb-2 pt-1">
           <a
             href="/portal"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-3 py-2 rounded-xl text-[12px] font-medium text-bharat-600 hover:text-white hover:bg-bharat-500 transition-all shadow-sm border border-bharat-100"
+            className="flex items-center gap-2 px-3 py-2 rounded-xl text-[12px] font-medium text-bharat-600 dark:text-bharat-400 hover:text-white hover:bg-bharat-500 transition-all shadow-sm border border-bharat-100 dark:border-bharat-900/50"
           >
             <div className="w-1.5 h-1.5 rounded-full bg-current animate-pulse" />
             Open Citizen Portal

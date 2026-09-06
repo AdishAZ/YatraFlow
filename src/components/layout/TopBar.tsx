@@ -22,7 +22,6 @@ export default function TopBar() {
   const [templeDropdownOpen, setTempleDropdownOpen] = useState(false);
   const { actions } = useDemoState();
   const activeIncidents = actions.getActiveIncidentCount();
-  const [statusDropdownOpen, setStatusDropdownOpen] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => setTime(new Date()), 1000);
@@ -145,49 +144,6 @@ export default function TopBar() {
         {/* Right Section */}
         <div className="flex items-center gap-7 pr-2 flex-shrink-0">
           
-          {/* OPCON Selector - Reduced width */}
-          <div className="relative">
-            <button
-              onClick={() => setStatusDropdownOpen(!statusDropdownOpen)}
-              className={cn(
-                'flex items-center justify-between w-[130px] px-3 py-1.5 rounded-lg border text-[11px] font-black uppercase tracking-wider transition-all',
-                missionStatus === 'NOMINAL'
-                  ? 'bg-emerald-50 border-emerald-200 text-emerald-700'
-                  : missionStatus === 'ELEVATED'
-                  ? 'bg-orange-50 border-orange-200 text-orange-600'
-                  : 'bg-red-50 border-red-200 text-red-700'
-              )}
-            >
-              <div className="flex items-center gap-2">
-                <span
-                  className={cn(
-                    'w-2 h-2 rounded-full',
-                    missionStatus === 'NOMINAL' ? 'bg-emerald-500' : missionStatus === 'ELEVATED' ? 'bg-orange-500' : 'bg-red-500 animate-pulse'
-                  )}
-                />
-                <span>OPCON: {missionStatus.substring(0, 3)}</span>
-              </div>
-              <ChevronDown className="w-3 h-3 opacity-50" />
-            </button>
-            {statusDropdownOpen && (
-              <div className="absolute right-0 mt-3 w-48 bg-white border border-slate-200 rounded-xl shadow-xl p-2 z-50">
-                {['NOMINAL', 'ELEVATED', 'CRITICAL'].map((status) => (
-                  <button
-                    key={status}
-                    onClick={() => { setMissionStatus(status as any); setStatusDropdownOpen(false); }}
-                    className={cn(
-                      "w-full text-left px-3 py-2 rounded-lg text-[11px] font-black transition-colors",
-                      status === 'NOMINAL' ? "text-emerald-700 hover:bg-emerald-50" : 
-                      status === 'ELEVATED' ? "text-orange-700 hover:bg-orange-50" : "text-red-700 hover:bg-red-50"
-                    )}
-                  >
-                    OPCON: {status}
-                  </button>
-                ))}
-              </div>
-            )}
-          </div>
-
           <div className="w-px h-6 bg-slate-200/80 hidden sm:block flex-shrink-0" />
 
           {/* Time Block - Stacked */}

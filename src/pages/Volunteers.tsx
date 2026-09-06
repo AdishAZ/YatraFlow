@@ -10,6 +10,7 @@ import { cn } from '@/lib/utils';
 import { showToast } from '@/components/ui/Toast';
 import { DispatchDrawer } from '@/components/ui/DispatchDrawer';
 import { useDemoState } from '@/hooks/useDemoState';
+import { useOperational } from '@/context/OperationalContext';
 
 type ResourceCategoryFilter = 'All' | 'Police' | 'Medical' | 'Fire' | 'SDRF' | 'Volunteer' | 'Temple';
 
@@ -26,7 +27,7 @@ const seededRandom = (seed: string, min: number, max: number) => {
 };
 
 export default function Volunteers() {
-  const [selectedTemple, setSelectedTemple] = useState<TempleId | 'all'>('all');
+  const { activeTemple } = useOperational();
   const [activeCategory, setActiveCategory] = useState<ResourceCategoryFilter>('All');
   const [searchQuery, setSearchQuery] = useState('');
   const [tick, setTick] = useState(0);
@@ -65,12 +66,12 @@ export default function Volunteers() {
 
   const filteredResources = useMemo(() => {
     return resources.filter((r) => {
-      const matchesTemple = selectedTemple === 'all' || r.templeId === selectedTemple;
+      const matchesTemple = r.templeId === activeTemple.id;
       const matchesCategory = activeCategory === 'All' || r.role === activeCategory;
       const matchesSearch = r.teamName.toLowerCase().includes(searchQuery.toLowerCase()) || r.name.toLowerCase().includes(searchQuery.toLowerCase());
       return matchesTemple && matchesCategory && matchesSearch;
     });
-  }, [resources, selectedTemple, activeCategory, searchQuery]);
+  }, [resources, activeTemple.id, activeCategory, searchQuery]);
 
   return (
     <div className="space-y-6 pb-12 bg-[#F8F8F5] min-h-screen relative">
@@ -166,13 +167,6 @@ export default function Volunteers() {
                   </button>
                 ))}
               </div>
-              <input
-                type="text"
-                placeholder="Search Team or ID..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="bg-slate-50 border border-slate-200 text-[11px] rounded-lg px-3 py-2 text-slate-800 placeholder:text-slate-400 focus:outline-none focus:border-saffron-500 w-48 font-mono"
-              />
             </div>
 
             {/* Tactical Resource Cards Grid */}
