@@ -53,7 +53,7 @@ export interface BridgeState {
 }
 
 // Use the live localtunnel URL for syncing with deployed Vercel frontend
-const BRIDGE_URL = 'https://real-pugs-try.loca.lt';
+const BRIDGE_URL = 'https://yatraflow-bridge-server-2026.loca.lt';
 const DEFAULT_STATE: BridgeState = {
   connected: false,
   mobileBookings: [],
@@ -69,8 +69,8 @@ export function useBridgeSync(intervalMs = 5000): BridgeState {
   const fetchAll = useCallback(async () => {
     try {
       const [bookingsRes, incidentsRes] = await Promise.all([
-        fetch(`${BRIDGE_URL}/api/bookings`).catch(() => null),
-        fetch(`${BRIDGE_URL}/api/incidents`).catch(() => null),
+        fetch(`${BRIDGE_URL}/api/bookings`, { headers: { 'Bypass-Tunnel-Reminder': 'true' } }).catch(() => null),
+        fetch(`${BRIDGE_URL}/api/incidents`, { headers: { 'Bypass-Tunnel-Reminder': 'true' } }).catch(() => null),
       ]);
 
       if (!bookingsRes?.ok && !incidentsRes?.ok) {
