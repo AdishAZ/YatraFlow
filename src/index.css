@@ -370,19 +370,28 @@ html.dark .text-slate-600 {
 html.dark .text-slate-700,
 html.dark .text-slate-800,
 html.dark .text-slate-900,
-html.dark .text-[#0E1A2B] {
+html.dark .text-black,
+html.dark .text-gray-900,
+html.dark .text-gray-800,
+html.dark [class*="text-[#0E1A2B]"] {
   color: #F1F5F9 !important;
 }
 
 html.dark .border-slate-100,
-html.dark .border-slate-200 {
+html.dark .border-slate-200,
+html.dark .border-slate-300,
+html.dark .border-gray-200 {
   border-color: #1E293B !important;
 }
 
 /* Ensure specific dark components like #0E1A2B stay dark or match */
-html.dark .bg-[#0E1A2B] {
+html.dark [class*="bg-[#0E1A2B]"] {
   background-color: #121E33 !important;
   border-color: #1E293B !important;
+}
+
+html.dark [class*="bg-[rgba(255,255,255"] {
+  background-color: rgba(18, 30, 51, 0.92) !important;
 }
 
 html.dark .border-slate-800 {

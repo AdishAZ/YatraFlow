@@ -7,6 +7,7 @@ interface OperationalContextType {
   templeInfo: TempleInfo;
   templeCameras: CameraFeed[];
   activeCamera: CameraFeed | null;
+  activeCameraId: string | null;
   openCamera: (cameraOrId: CameraFeed | string) => void;
   closeCamera: () => void;
   missionStatus: 'NOMINAL' | 'ELEVATED' | 'CRITICAL';
@@ -79,6 +80,7 @@ export function OperationalProvider({ children }: { children: ReactNode }) {
         templeInfo,
         templeCameras,
         activeCamera,
+        activeCameraId: activeCamera?.id || null,
         openCamera,
         closeCamera,
         missionStatus,

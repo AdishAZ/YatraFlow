@@ -4,12 +4,14 @@ import { TEMPLES } from '@/lib/data';
 import type { TempleId } from '@/lib/data';
 import type { DemoIncident } from '@/lib/demoState';
 import { useDemoState } from '@/hooks/useDemoState';
+import { useBridgeSync } from '@/hooks/useBridgeSync';
 import { IncidentDrawer } from '@/components/ui/IncidentDrawer';
 import { DispatchDrawer } from '@/components/ui/DispatchDrawer';
 import { showToast } from '@/components/ui/Toast';
 import { 
   ShieldAlert, AlertTriangle, AlertCircle, CheckCircle2, Timer, MapPin, 
-  Activity, Clock, ChevronDown, ChevronUp, Radio, FileText, Crosshair, Zap, Navigation, Plus
+  Activity, Clock, ChevronDown, ChevronUp, Radio, FileText, Crosshair, Zap, Navigation, Plus,
+  Smartphone, Wifi, WifiOff, Siren
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -25,6 +27,7 @@ const seededRandom = (seed: string, min: number, max: number) => {
 
 export default function Incidents() {
   const { incidents, resources, alerts, actions } = useDemoState();
+  const bridge = useBridgeSync(5000); // 🔄 poll bridge for mobile SOS
   const [selectedTemple, setSelectedTemple] = useState<TempleId | 'all'>('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [expandedIncident, setExpandedIncident] = useState<string | null>(null);
@@ -140,8 +143,69 @@ export default function Incidents() {
       <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.03] pointer-events-none z-0" />
 
       <div className="relative z-10 w-full px-4 space-y-4 pt-4">
-        
-        {/* UNIFIED COMMAND HEADER */}
+
+        {/* 📱 MOBILE SOS LIVE FEED — from bridge server */}
+        {(bridge.mobileIncidents.length > 0 || bridge.connected) && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="bg-white border border-red-200 rounded-xl p-3 shadow-sm"
+          >
+            <div className="flex items-center gap-2 mb-2">
+              <Siren className="w-4 h-4 text-red-600 animate-pulse" />
+              <span className="text-[11px] font-black text-red-700 uppercase tracking-widest">📱 Live Mobile SOS Feed</span>
+              <span className={cn(
+                'ml-auto text-[8px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1',
+                bridge.connected ? 'bg-emerald-100 text-emerald-700' : 'bg-slate-100 text-slate-400'
+              )}>
+                {bridge.connected ? <><Wifi className="w-2.5 h-2.5" /> LIVE</> : <><WifiOff className="w-2.5 h-2.5" /> Offline</>}
+              </span>
+            </div>
+            {bridge.mobileIncidents.length === 0 ? (
+              <div className="text-[9px] text-slate-400 text-center py-2">
+                No mobile SOS yet — waiting for pilgrim alerts...
+              </div>
+            ) : (
+              <div className="flex gap-2 overflow-x-auto pb-1">
+                {bridge.mobileIncidents.slice(0, 6).map(inc => (
+                  <div
+                    key={inc.id}
+                    className="shrink-0 bg-red-50 border border-red-200 rounded-lg p-2.5 min-w-[200px] max-w-[240px]"
+                  >
+                    <div className="flex items-center gap-1.5 mb-1">
+                      <span className="text-[8px] font-bold bg-red-600 text-white px-1.5 py-0.5 rounded uppercase">{inc.severity || 'CRITICAL'}</span>
+                      <span className="text-[8px] font-mono text-slate-400 ml-auto">{inc.id}</span>
+                    </div>
+                    <div className="flex items-center gap-1 mb-0.5">
+                      <Smartphone className="w-2.5 h-2.5 text-blue-500 shrink-0" />
+                      <div className="text-[9px] font-black text-[#0E1A2B] leading-tight truncate">{inc.title}</div>
+                    </div>
+                    <div className="text-[8px] text-slate-500 flex items-center gap-1">
+                      <MapPin className="w-2 h-2 shrink-0" /> {inc.location}
+                    </div>
+                    <div className="text-[8px] text-slate-400 mt-1">{inc.time} · {inc.reportedBy}</div>
+                    <div className="mt-1.5 flex gap-1">
+                      <button
+                        onClick={() => showToast(`Dispatching response to ${inc.location}`, 'success')}
+                        className="flex-1 text-[8px] font-bold bg-red-600 hover:bg-red-700 text-white px-2 py-1 rounded transition-colors"
+                      >
+                        Dispatch
+                      </button>
+                      <button
+                        onClick={() => showToast(`${inc.id} acknowledged`, 'info')}
+                        className="flex-1 text-[8px] font-bold bg-slate-100 hover:bg-slate-200 text-slate-600 px-2 py-1 rounded transition-colors"
+                      >
+                        Ack
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </motion.div>
+        )}
+
+
         <div className="flex flex-col xl:flex-row justify-between items-stretch gap-4 bg-white border border-slate-200 p-3 xl:px-4 xl:py-2.5 rounded-xl shadow-sm">
           
           {/* LEFT: TITLE (~35%) */}

@@ -205,22 +205,14 @@ export default function AICopilot() {
   const [isTyping, setIsTyping] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  const mockResponses = [
-    "I have analyzed the current crowd flow. Congestion is likely at the main entrance in 15 minutes. **Recommended Actions:**\n1. Deploy 2 additional volunteers to the main entrance.\n2. Open overflow gates.\n3. Send alert to security team.",
-    "**Predicted Risk Score:** Security 4.2 · Crowd 6.8 · Stampede 2.1\n\nModerate risk detected due to increased influx. Please monitor Sector B.",
-    "Simulation complete. If we route 30% of traffic to the East gate, queue times will reduce by approximately 12 minutes.",
-    "⚠ Overcrowding detected near the Prasad distribution area. Immediate attention required.",
-    "**Simulation: Evacuation Protocol**\n| Gate | Status | Est. Clearance Time |\n|------|--------|----------------------|\n| North| Open   | 4.5 mins            |\n| East | Congested| 12.2 mins ⚠       |\n| South| Open   | 3.1 mins            |\n\nEvacuation via South gate is optimal.",
-    "The VIP arrival scheduled for 14:00 is on track. Dedicated corridor has been secured by the field team."
-  ];
-
-  const handleSend = () => {
+  const handleSend = async () => {
     if (!inputValue.trim()) return;
 
+    const userMessage = inputValue;
     const newUserMsg = {
       role: 'user' as const,
       sender: 'user',
-      content: inputValue,
+      content: userMessage,
       timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
     };
 
@@ -228,19 +220,65 @@ export default function AICopilot() {
     setInputValue('');
     setIsTyping(true);
 
-    setTimeout(() => {
-      setMessages(prev => {
-        const responseIndex = prev.length % mockResponses.length;
-        const newAiMsg = {
-          role: 'ai' as const,
-          sender: 'ai',
-          content: mockResponses[responseIndex],
-          timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
-        };
-        return [...prev, newAiMsg];
+    try {
+      const apiKey = import.meta.env.VITE_GROQ_API_KEY;
+      if (!apiKey) {
+        throw new Error("API key not configured");
+      }
+
+      // Convert history for API
+      const apiMessages = messages.map(m => ({
+        role: m.role === 'ai' ? 'assistant' : 'user',
+        content: m.content
+      }));
+      apiMessages.push({ role: 'user', content: userMessage });
+
+      // Add system prompt context
+      apiMessages.unshift({
+        role: 'system',
+        content: 'You are YatraFlow AI, a specialized Command Center assistant for Temple Crowd Management. Provide concise, operational responses. Use formatting like **bold** for emphasis, ⚠ for alerts, and markdown tables for tabular data if applicable.'
       });
+
+      const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${apiKey}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          model: 'llama3-8b-8192',
+          messages: apiMessages,
+          temperature: 0.3,
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error(`API Error: ${response.status}`);
+      }
+
+      const data = await response.json();
+      const aiResponseContent = data.choices[0].message.content;
+
+      const newAiMsg = {
+        role: 'ai' as const,
+        sender: 'ai',
+        content: aiResponseContent,
+        timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+      };
+      
+      setMessages(prev => [...prev, newAiMsg]);
+    } catch (error) {
+      console.error(error);
+      const errorMsg = {
+        role: 'ai' as const,
+        sender: 'ai',
+        content: `⚠ **Connection Error**\nUnable to reach AI subsystem. Please verify your connection and API key configuration.`,
+        timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+      };
+      setMessages(prev => [...prev, errorMsg]);
+    } finally {
       setIsTyping(false);
-    }, 2000);
+    }
   };
 
   const capabilities = [
